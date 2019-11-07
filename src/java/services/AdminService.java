@@ -54,6 +54,11 @@ public class AdminService {
         return db.getPageBean(sql, new String[]{}, curPage);
     }
     
+    public PageBean PriceList(int curPage,String HaNo) {
+        String sql = "select * from updateprice where HaNo= ?";
+        return db.getPageBean(sql, new String[]{HaNo}, curPage);
+    }
+    
     public Map getById(String HaNo) {
         String sql = "select * from hardware where HaNo = ?";
         return db.getMap(sql, new String[]{HaNo});

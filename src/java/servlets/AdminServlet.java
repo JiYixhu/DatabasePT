@@ -66,7 +66,7 @@ public class AdminServlet extends HttpServlet {
             rd.forward(request, response);
         }
         else if ("Calist".equals(flag)) {
-            String page = request.getParameter("page");
+            String page = request.getParameter("page");//上一个页面哪里在传page的值
             int curPage = 0;
             if (page == null || page.length() < 1) {
                 curPage = 1;
@@ -94,8 +94,22 @@ public class AdminServlet extends HttpServlet {
         else if ("showHadetail".equals(flag)) {
             String id = request.getParameter("id");
             Map hardware = as.getById(id);
-            request.setAttribute("hardware", hardware);
+            request.setAttribute("hardware", hardware);//这句什么意思？
             rd = request.getRequestDispatcher("/admin/showHadetail.jsp");
+            rd.forward(request, response);
+        }
+        else if ("PriceList".equals(flag)) {
+            String id = request.getParameter("id");
+            String page = request.getParameter("page");
+            int curPage = 0;
+            if (page == null || page.length() < 1) {
+                curPage = 1;
+            } else {
+                curPage = Integer.parseInt(page);
+            }
+            PageBean pageBean =as.PriceList(curPage,id);
+            request.setAttribute("pageBean", pageBean);
+            rd = request.getRequestDispatcher("/admin/PriceList.jsp");
             rd.forward(request, response);
         }
         else if ("add".equals(flag)) {

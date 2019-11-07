@@ -1,9 +1,3 @@
-<%-- 
-    Document   : first
-    Created on : 2019-10-17, 21:50:59
-    Author     : 季忆
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

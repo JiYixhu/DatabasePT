@@ -11,7 +11,14 @@
     table{align-items: center;border-collapse: collapse;}
     table td{text-align: center;border: 3px solid #48D1CC;}
     table tr{height: 40px;}
-    table td a{display: inline-block;width: 120px;background-color:#FFA500;height: 30px;line-height: 30px;color: #fff;}
+    table td a{display: inline-block;
+               width: 120px;
+               background-color:#FFA500;
+               height: 30px;
+               line-height: 30px;
+               color: #fff;
+               text-decoration:none;
+    }
 </style>
 <center>
     <h2>硬件详细信息</h2>
@@ -43,18 +50,9 @@
         </tr>
         <tr>
             <td colspan="5">
-                <a href="${pageContext.request.contextPath}/DownLoadServlet?id=${file.id}">下载</a>
-                <a href="${pageContext.request.contextPath}/index.jsp">返回</a>
+                <a href="${pageContext.request.contextPath}/AdminServlet?flag=PriceList&id=${hardware.HaNo}">查看报价信息</a>
+                <a href="${pageContext.request.contextPath}/AdminServlet?flag=Halist">返回</a>
             </td>
         </tr>
     </table>
 </center>
-
-<c:if test="${DownLoadResult==\"ok\"}">
-    <script>window.alert("下载成功");</script>
-    <%session.setAttribute("DownLoadResult", null);%>
-</c:if>
-<c:if test="${DownLoadResult==\"no\"}">
-    <script>window.alert("下载失败");</script>
-    <%session.setAttribute("DownLoadResult", null);%>
-</c:if>
