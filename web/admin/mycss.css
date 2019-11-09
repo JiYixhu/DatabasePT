@@ -1,0 +1,12 @@
+h1{
+    margin-top: 50px;
+    font-size: 30px;
+    color: #6699CC;
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+}
+.table tr:hover{background-color: #f6f6f6;}
+.table td{text-align: center;}
+.table th{background-color: #48D1CC; color:#FFFFFF; font-size:18px;}
+.updateBtn,.deleteBtn{display: block;width: 60px;height: 26px;font-size: 14px;font-weight: 800;line-height: 26px;color: #fff;}
+.updateBtn{background-color: #6495ED;border: none;box-sizing: border-box;border-radius: 4px;}
+.deleteBtn{background-color: #DC143C;border: none;box-sizing: border-box;border-radius: 4px;}

@@ -1,22 +1,8 @@
 <%@page contentType="text/html" pageEncoding="GB2312"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@include file="/admin/header.jsp"%>
-<style>
-    h1{
-        color: transparent;
-        background-color :#008B8B;
-        text-shadow : rgba(255,255,255,0.5) 0 5px 6px, rgba(255,255,255,0.2) 1px 3px 3px;
-        -webkit-background-clip : text;
-    }
-    .table tr:hover{background-color: #f6f6f6;}
-    .table td{text-align: center;}
-    .table th{background-color: #48D1CC; color:#FFFFFF; font-size:18px;}
-    .table tr:hover{background-color: #f6f6f6;}
-    .updateBtn,.deleteBtn{display: block;width: 60px;height: 26px;font-size: 14px;font-weight: 800;line-height: 26px;color: #fff;}
-    .updateBtn{background-color: #6495ED;border: none;box-sizing: border-box;border-radius: 4px;}
-    .deleteBtn{background-color: #DC143C;border: none;box-sizing: border-box;border-radius: 4px;}
-</style>
-<body background="/DatabasePT/img/背景.jpeg">
+<link rel="stylesheet" href="admin/mycss.css"/>
+<body background="/DatabasePT/img/背景2.jpg">
 <center>
     <br><h1>商家列表</h1><br>
     <c:set var="url" value="${pageContext.request.contextPath}/AdminServlet?flag=Bulist"/>

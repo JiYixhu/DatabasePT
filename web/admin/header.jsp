@@ -1,51 +1,47 @@
 <%@page contentType="text/html" pageEncoding="GB2312"%>
-
-<div class="box" align="right">
+<div class="box" align="center">
     <ul>
+        <li><a href="${pageContext.request.contextPath}/login.jsp">登录页面</a></li>
         <li><a href="${pageContext.request.contextPath}/AdminServlet?flag=Halist">硬件列表</a></li>
         <li><a href="${pageContext.request.contextPath}/AdminServlet?flag=Bulist">商家列表</a></li>
         <li><a href="${pageContext.request.contextPath}/AdminServlet?flag=Calist">类别列表</a></li>
         <li><a href="${pageContext.request.contextPath}/AdminServlet?flag=Brlist">品牌列表</a></li>
     </ul>
 </div>
-    <style>
-            .box{
-            width: 600px;
-            height: 50px;
-            background: #48D1CC;
-            margin: 30px auto 0; 
-            border-radius:10px;
-            box-shadow: 0 5px 2px #008B8B;
-        }
-        .box ul{
-            height: 100%;
-            padding: 0 5%;
-            list-style: none;
-            color: #fff;
-            display: flex;
-            justify-content: space-around;
-            font:bold 16px/50px Arial;
+   
+<style>
+    .box{
+        /* 设置宽度高度背景颜色 */
+        height: 50px;
+        width:100%;
+        background:#66CCFF;
+        position: fixed; /*固定在顶部*/
+        top: 0;/*离顶部的距离为0*/
+    }
+    .box ul{
+        /* 清除ul标签的默认样式 */
+        width: 80%;
+        list-style-type: none;
+        margin: 0;            
+        padding: 0;
+        overflow: hidden;
 
-        }
-        .box ul li{
-            height: 100%;
-            width: 100px;
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-shadow:2px 2px 4px rgba(0,0,0,.5);
-            background: linear-gradient(red,#a82724,red) no-repeat right/1px 15px;
-        }
-        .box ul li:last-of-type{
-            background:none;
-        }
-        .box ul li a{
-            text-decoration: none;
-            color:#FFFFFF;
+    }
+    .box li {    
+        float:left; /* 使li内容横向浮动，即横向排列  */
+        margin-right:50px;  /* 两个li之间的距离*/
+    }
 
-        }
-        .box ul li a:hover{
-            transform: rotate(10deg);
-        }
+    .box li a{
+        /* 设置链接内容显示的格式*/
+        display: block; /* 把链接显示为块元素可使整个链接区域可点击 */
+        color:white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none; /* 去除下划线 */
+    }
+    .box li a:hover{
+        /* 鼠标选中时背景变色 */
+        background-color: #FFCC99;
+    }
 </style>

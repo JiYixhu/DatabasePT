@@ -3,6 +3,8 @@
 <%@include file="/admin/header.jsp"%>
 <style>
     h2{
+        margin-top: 50px;
+        font-size: 30px;
         color: transparent;
         background-color :#008B8B;
         text-shadow : rgba(255,255,255,0.5) 0 5px 6px, rgba(255,255,255,0.2) 1px 3px 3px;

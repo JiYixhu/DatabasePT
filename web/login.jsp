@@ -29,9 +29,10 @@
         height: 30px;
         background-color:#6699FF;
         border: none;
-        border-radius:15px;
-        
+        border-radius:15px;     
     }
+    a{color: blue; text-decoration:none;}
+    a:hover{color: aquamarine; text-decoration:underline; }
 </style>
 <body background="/DatabasePT/img/±³¾°1.jpg">
 <center>
