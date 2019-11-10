@@ -62,7 +62,7 @@ public final class footer_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<style>\n");
       out.write("    *{margin: 0px;padding: 0px;}\n");
       out.write("    a{text-decoration: none;color: #039;}\n");
-      out.write("    .footer{margin-top: 20px;width: 80%;align-items: center;}\n");
+      out.write("    .footer{margin-top:50px;width: 80%;align-items: center;}\n");
       out.write("    .footer ul{height: 40px;display: inline-block;}\n");
       out.write("    .footer ul li{ float: left;list-style: none;height: 40px;width: 240px;\n");
       out.write("                   line-height: 40px;display: inline-block;border: solid 2px rgba(102,186,183,1);\n");
@@ -72,6 +72,7 @@ public final class footer_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    .copyright{\n");
       out.write("        margin-bottom: 20px;\n");
       out.write("    }\n");
+      out.write("    \n");
       out.write("</style>\n");
       out.write("<div class=\"footer\">\n");
       out.write("    <ul>\n");
@@ -105,7 +106,7 @@ public final class footer_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </ul>\n");
       out.write("</div>\n");
       out.write("<div class=\"copyright\" align=\"center\">  \n");
-      out.write("    <ul>Copyright @ 2019 季忆</ul>\n");
+      out.write("    <ul>Copyright&copy 2019 JiYi</ul>\n");
       out.write("</div>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

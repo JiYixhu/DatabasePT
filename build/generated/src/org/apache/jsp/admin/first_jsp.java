@@ -76,6 +76,9 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <ul>\n");
       out.write("        <li><a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("/login.jsp\">登录页面</a></li>\n");
+      out.write("        <li><a href=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("/AdminServlet?flag=Halist\">硬件列表</a></li>\n");
       out.write("        <li><a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
@@ -88,64 +91,46 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("/AdminServlet?flag=Brlist\">品牌列表</a></li>\n");
       out.write("    </ul>\n");
       out.write("</div>\n");
-      out.write("    <style>\n");
-      out.write("            .box{\n");
-      out.write("            width: 600px;\n");
-      out.write("            height: 50px;\n");
-      out.write("            background: #48D1CC;\n");
-      out.write("            margin: 30px auto 0; \n");
-      out.write("            border-radius:10px;\n");
-      out.write("            box-shadow: 0 5px 2px #008B8B;\n");
-      out.write("        }\n");
-      out.write("        .box ul{\n");
-      out.write("            height: 100%;\n");
-      out.write("            padding: 0 5%;\n");
-      out.write("            list-style: none;\n");
-      out.write("            color: #fff;\n");
-      out.write("            display: flex;\n");
-      out.write("            justify-content: space-around;\n");
-      out.write("            font:bold 16px/50px Arial;\n");
-      out.write("\n");
-      out.write("        }\n");
-      out.write("        .box ul li{\n");
-      out.write("            height: 100%;\n");
-      out.write("            width: 100px;\n");
-      out.write("            font-size: 18px;\n");
-      out.write("            display: flex;\n");
-      out.write("            align-items: center;\n");
-      out.write("            justify-content: center;\n");
-      out.write("            text-shadow:2px 2px 4px rgba(0,0,0,.5);\n");
-      out.write("            background: linear-gradient(red,#a82724,red) no-repeat right/1px 15px;\n");
-      out.write("        }\n");
-      out.write("        .box ul li:last-of-type{\n");
-      out.write("            background:none;\n");
-      out.write("        }\n");
-      out.write("        .box ul li a{\n");
-      out.write("            text-decoration: none;\n");
-      out.write("            color:#FFFFFF;\n");
-      out.write("\n");
-      out.write("        }\n");
-      out.write("        .box ul li a:hover{\n");
-      out.write("            transform: rotate(10deg);\n");
-      out.write("        }\n");
-      out.write("</style>\n");
-      out.write("\n");
+      out.write("   \n");
       out.write("<style>\n");
-      out.write("    h1{\n");
-      out.write("        color: transparent;\n");
-      out.write("        background-color :#008B8B;\n");
-      out.write("        text-shadow : rgba(255,255,255,0.5) 0 5px 6px, rgba(255,255,255,0.2) 1px 3px 3px;\n");
-      out.write("        -webkit-background-clip : text;\n");
+      out.write("    .box{\n");
+      out.write("        /* 设置宽度高度背景颜色 */\n");
+      out.write("        height: 50px;\n");
+      out.write("        width:100%;\n");
+      out.write("        background:#66CCFF;\n");
+      out.write("        position: fixed; /*固定在顶部*/\n");
+      out.write("        top: 0;/*离顶部的距离为0*/\n");
       out.write("    }\n");
-      out.write("    .table tr:hover{background-color: #f6f6f6;}\n");
-      out.write("    .table td{text-align: center;}\n");
-      out.write("    .table th{background-color: #48D1CC; color:#FFFFFF; font-size:18px;}\n");
-      out.write("    .table tr:hover{background-color: #f6f6f6;}\n");
-      out.write("    .updateBtn,.deleteBtn{display: block;width: 60px;height: 26px;font-size: 14px;font-weight: 800;line-height: 26px;color: #fff;}\n");
-      out.write("    .updateBtn{background-color: #6495ED;border: none;box-sizing: border-box;border-radius: 4px;}\n");
-      out.write("    .deleteBtn{background-color: #DC143C;border: none;box-sizing: border-box;border-radius: 4px;}\n");
+      out.write("    .box ul{\n");
+      out.write("        /* 清除ul标签的默认样式 */\n");
+      out.write("        width: 80%;\n");
+      out.write("        list-style-type: none;\n");
+      out.write("        margin: 0;            \n");
+      out.write("        padding: 0;\n");
+      out.write("        overflow: hidden;\n");
+      out.write("\n");
+      out.write("    }\n");
+      out.write("    .box li {    \n");
+      out.write("        float:left; /* 使li内容横向浮动，即横向排列  */\n");
+      out.write("        margin-right:50px;  /* 两个li之间的距离*/\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    .box li a{\n");
+      out.write("        /* 设置链接内容显示的格式*/\n");
+      out.write("        display: block; /* 把链接显示为块元素可使整个链接区域可点击 */\n");
+      out.write("        color:white;\n");
+      out.write("        text-align: center;\n");
+      out.write("        padding: 14px 16px;\n");
+      out.write("        text-decoration: none; /* 去除下划线 */\n");
+      out.write("    }\n");
+      out.write("    .box li a:hover{\n");
+      out.write("        /* 鼠标选中时背景变色 */\n");
+      out.write("        background-color: #FFCC99;\n");
+      out.write("    }\n");
       out.write("</style>\n");
-      out.write("<body background=\"/DatabasePT/img/背景.jpeg\">\n");
+      out.write("\n");
+      out.write("<link rel=\"stylesheet\" href=\"admin/mycss.css\"/>\n");
+      out.write("<body background=\"/DatabasePT/img/背景2.jpg\">\n");
       out.write("<center>\n");
       out.write("    <br><h1>硬件列表</h1><br>\n");
       out.write("    ");
@@ -176,13 +161,17 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<style>\n");
       out.write("    *{margin: 0px;padding: 0px;}\n");
       out.write("    a{text-decoration: none;color: #039;}\n");
-      out.write("    .footer{margin-top: 20px;width: 80%;align-items: center;}\n");
+      out.write("    .footer{margin-top:50px;width: 80%;align-items: center;}\n");
       out.write("    .footer ul{height: 40px;display: inline-block;}\n");
       out.write("    .footer ul li{ float: left;list-style: none;height: 40px;width: 240px;\n");
       out.write("                   line-height: 40px;display: inline-block;border: solid 2px rgba(102,186,183,1);\n");
       out.write("                   border-bottom-width: 0px;margin: 0 0 -2px -2px;}\n");
       out.write("    .footer ul li a{color:#008B8B;}\n");
       out.write("    .footer ul li a:hover{background-color:#008B8B; color: white;}\n");
+      out.write("    .copyright{\n");
+      out.write("        margin-bottom: 20px;\n");
+      out.write("    }\n");
+      out.write("    \n");
       out.write("</style>\n");
       out.write("<div class=\"footer\">\n");
       out.write("    <ul>\n");
@@ -204,16 +193,19 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("        </li>\n");
       out.write("        <li>\n");
-      out.write("        ");
+      out.write("            ");
       if (_jspx_meth_c_choose_0(_jspx_page_context))
         return;
       out.write("\n");
-      out.write("        ");
+      out.write("            ");
       if (_jspx_meth_c_choose_1(_jspx_page_context))
         return;
       out.write("\n");
       out.write("        </li>\n");
       out.write("    </ul>\n");
+      out.write("</div>\n");
+      out.write("<div class=\"copyright\" align=\"center\">  \n");
+      out.write("    <ul>Copyright&copy 2019 JiYi</ul>\n");
       out.write("</div>");
       out.write("\n");
       out.write("</center>\n");
@@ -342,15 +334,15 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
     if (_jspx_eval_c_choose_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\n");
-        out.write("            ");
+        out.write("                ");
         if (_jspx_meth_c_when_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
           return true;
         out.write("\n");
-        out.write("            ");
+        out.write("                ");
         if (_jspx_meth_c_otherwise_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
           return true;
         out.write("\n");
-        out.write("        ");
+        out.write("            ");
         int evalDoAfterBody = _jspx_th_c_choose_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
@@ -402,15 +394,15 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
     if (_jspx_eval_c_otherwise_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\n");
-        out.write("                <a href=\"");
+        out.write("                    <a href=\"");
         out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${url}", java.lang.String.class, (PageContext)_jspx_page_context, null));
         out.write("&page=1\">上一页</a>\n");
-        out.write("                <a href=\"");
+        out.write("                    <a href=\"");
         out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${url}", java.lang.String.class, (PageContext)_jspx_page_context, null));
         out.write("&page=");
         out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageBean.curPage-1}", java.lang.String.class, (PageContext)_jspx_page_context, null));
         out.write("\">首页</a>\n");
-        out.write("            ");
+        out.write("                ");
         int evalDoAfterBody = _jspx_th_c_otherwise_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
@@ -436,15 +428,15 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
     if (_jspx_eval_c_choose_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\n");
-        out.write("            ");
+        out.write("                ");
         if (_jspx_meth_c_when_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_1, _jspx_page_context))
           return true;
         out.write("\n");
-        out.write("            ");
+        out.write("                ");
         if (_jspx_meth_c_otherwise_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_1, _jspx_page_context))
           return true;
         out.write("\n");
-        out.write("        ");
+        out.write("            ");
         int evalDoAfterBody = _jspx_th_c_choose_1.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
@@ -496,17 +488,17 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
     if (_jspx_eval_c_otherwise_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\n");
-        out.write("                <a href=\"");
+        out.write("                    <a href=\"");
         out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${url}", java.lang.String.class, (PageContext)_jspx_page_context, null));
         out.write("&page=");
         out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageBean.curPage+1}", java.lang.String.class, (PageContext)_jspx_page_context, null));
         out.write("\">下一页</a>\n");
-        out.write("                <a href=\"");
+        out.write("                    <a href=\"");
         out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${url}", java.lang.String.class, (PageContext)_jspx_page_context, null));
         out.write("&page=");
         out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageBean.totalPages}", java.lang.String.class, (PageContext)_jspx_page_context, null));
         out.write("\">尾页</a>\n");
-        out.write("            ");
+        out.write("                ");
         int evalDoAfterBody = _jspx_th_c_otherwise_1.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;

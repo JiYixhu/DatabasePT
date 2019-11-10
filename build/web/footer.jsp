@@ -45,5 +45,5 @@
     </ul>
 </div>
 <div class="copyright" align="center">  
-    <ul>Copyright 2019 JiYi</ul>
+    <ul>Copyright&copy 2019 JiYi</ul>
 </div>

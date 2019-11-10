@@ -30,9 +30,15 @@
         border: none;
         border-radius:15px;        
     }
-    td{
-        color:#333333;
+    td{color:#333333;}
+    .t{/*下划线样式*/
+        border-bottom: 1px solid #005aa7;
+        color:#005aa7;
+        border-top: 0px;border-left: 0px;border-right: 0px;
+        background-color: transparent;
+        height: 30px;
     }
+    .tt{width: 100%;height: 30px;border:1px solid #3399ff;padding-left: 10px;border-radius: 5px;}/*备用样式*/
 </style>
 <body background="/DatabasePT/img/背景1.jpg">
 <center>
@@ -41,25 +47,29 @@
         <table>
             <h2>注册</h2>
             <tr>
-                <td>请输入用户名:</td><td><input name="username" placeholder="十三个字符以内" type="text" style="width: 100%;height: 30px;border:1px solid #3399ff;padding-left: 10px;border-radius: 5px;"></td>
+                <td>请输入用户名:</td><td><input class="t" name="username" placeholder="十三个字符以内" type="text" ></td>
             </tr>
             <tr>
-                <td>请输入密码:</td><td><input name="pwd1" placeholder="十个字符以内" type="password" style="width: 100%;height: 30px;border:1px solid #3399ff;padding-left: 10px;border-radius: 5px;"></td>
+                <td>请输入密码:</td><td><input class="t" name="pwd1" placeholder="十个字符以内" type="password"></td>
             </tr>
             <tr>    
-                <td>请确认密码：</td><td><input name="pwd2" placeholder="十个字符以内" type="password" style="width: 100%;height: 30px;border:1px solid #3399ff;padding-left: 10px;border-radius: 5px;"></td>
+                <td>请确认密码：</td><td><input class="t" name="pwd2" placeholder="十个字符以内" type="password"></td>
             </tr>
             <tr>    
-                <td>请输入手机号：</td><td><input name="tel" placeholder="中国大陆11位手机号" type="text" style="width: 100%;height: 30px;border:1px solid #3399ff;padding-left: 10px;border-radius: 5px;"></td>
+                <td>请输入手机号：</td><td><input class="t" name="tel" placeholder="中国大陆11位手机号" type="text"></td>
             </tr>
         </table>
         <br>
         <input class="submit" type="submit" value="提交">
-        <input class="submit" type="reset" value="重置">
+        <input class="submit" type="button" value="返回" onclick="location.href = 'login.jsp'">
     </form>
-
 </center>
 </body>
+
+<c:if test="${result=='isnull'}">
+    <script>window.alert("有为空的项，请填写完毕！");</script>
+    <%session.setAttribute("result", null);%>
+</c:if>
 <c:if test="${result=='no'}">
     <script>window.alert("注册失败!用户名重复！");</script>
     <%session.setAttribute("result", null);%>

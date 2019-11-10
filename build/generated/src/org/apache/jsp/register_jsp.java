@@ -83,9 +83,15 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        border: none;\n");
       out.write("        border-radius:15px;        \n");
       out.write("    }\n");
-      out.write("    td{\n");
-      out.write("        color:#333333;\n");
+      out.write("    td{color:#333333;}\n");
+      out.write("    .t{/*下划线样式*/\n");
+      out.write("        border-bottom: 1px solid #005aa7;\n");
+      out.write("        color:#005aa7;\n");
+      out.write("        border-top: 0px;border-left: 0px;border-right: 0px;\n");
+      out.write("        background-color: transparent;\n");
+      out.write("        height: 30px;\n");
       out.write("    }\n");
+      out.write("    .tt{width: 100%;height: 30px;border:1px solid #3399ff;padding-left: 10px;border-radius: 5px;}/*备用样式*/\n");
       out.write("</style>\n");
       out.write("<body background=\"/DatabasePT/img/背景1.jpg\">\n");
       out.write("<center>\n");
@@ -96,37 +102,37 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <table>\n");
       out.write("            <h2>注册</h2>\n");
       out.write("            <tr>\n");
-      out.write("                <td>请输入用户名:</td><td><input name=\"username\" placeholder=\"十三个字符以内\" type=\"text\" style=\"width: 100%;height: 30px;border:1px solid #3399ff;padding-left: 10px;border-radius: 5px;\"></td>\n");
+      out.write("                <td>请输入用户名:</td><td><input class=\"t\" name=\"username\" placeholder=\"十三个字符以内\" type=\"text\" ></td>\n");
       out.write("            </tr>\n");
       out.write("            <tr>\n");
-      out.write("                <td>请输入密码:</td><td><input name=\"pwd1\" placeholder=\"十个字符以内\" type=\"password\" style=\"width: 100%;height: 30px;border:1px solid #3399ff;padding-left: 10px;border-radius: 5px;\"></td>\n");
+      out.write("                <td>请输入密码:</td><td><input class=\"t\" name=\"pwd1\" placeholder=\"十个字符以内\" type=\"password\"></td>\n");
       out.write("            </tr>\n");
       out.write("            <tr>    \n");
-      out.write("                <td>请确认密码：</td><td><input name=\"pwd2\" placeholder=\"十个字符以内\" type=\"password\" style=\"width: 100%;height: 30px;border:1px solid #3399ff;padding-left: 10px;border-radius: 5px;\"></td>\n");
+      out.write("                <td>请确认密码：</td><td><input class=\"t\" name=\"pwd2\" placeholder=\"十个字符以内\" type=\"password\"></td>\n");
       out.write("            </tr>\n");
       out.write("            <tr>    \n");
-      out.write("                <td>请输入手机号：</td><td><input name=\"tel\" type=\"text\" style=\"width: 100%;height: 30px;border:1px solid #3399ff;padding-left: 10px;border-radius: 5px;\"></td>\n");
+      out.write("                <td>请输入手机号：</td><td><input class=\"t\" name=\"tel\" placeholder=\"中国大陆11位手机号\" type=\"text\"></td>\n");
       out.write("            </tr>\n");
       out.write("        </table>\n");
       out.write("        <br>\n");
       out.write("        <input class=\"submit\" type=\"submit\" value=\"提交\">\n");
-      out.write("        <input class=\"submit\" type=\"reset\" value=\"重置\">\n");
+      out.write("        <input class=\"submit\" type=\"button\" value=\"返回\" onclick=\"location.href = 'login.jsp'\">\n");
       out.write("    </form>\n");
-      out.write("        \n");
       out.write("</center>\n");
       out.write("</body>\n");
+      out.write("\n");
       //  c:if
       org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
       _jspx_th_c_if_0.setPageContext(_jspx_page_context);
       _jspx_th_c_if_0.setParent(null);
-      _jspx_th_c_if_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${loginResult=='no'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+      _jspx_th_c_if_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${result=='isnull'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
       int _jspx_eval_c_if_0 = _jspx_th_c_if_0.doStartTag();
       if (_jspx_eval_c_if_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\n");
-          out.write("    <script>window.alert(\"账号或密码错误!!!\");</script>\n");
+          out.write("    <script>window.alert(\"有为空的项，请填写完毕！\");</script>\n");
           out.write("    ");
-session.setAttribute("loginResult", null);
+session.setAttribute("result", null);
           out.write('\n');
           int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -138,6 +144,81 @@ session.setAttribute("loginResult", null);
         return;
       }
       _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+      out.write('\n');
+      //  c:if
+      org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_1 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+      _jspx_th_c_if_1.setPageContext(_jspx_page_context);
+      _jspx_th_c_if_1.setParent(null);
+      _jspx_th_c_if_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${result=='no'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+      int _jspx_eval_c_if_1 = _jspx_th_c_if_1.doStartTag();
+      if (_jspx_eval_c_if_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\n");
+          out.write("    <script>window.alert(\"注册失败!用户名重复！\");</script>\n");
+          out.write("    ");
+session.setAttribute("result", null);
+          out.write('\n');
+          int evalDoAfterBody = _jspx_th_c_if_1.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_c_if_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_1);
+        return;
+      }
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_1);
+      out.write('\n');
+      //  c:if
+      org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_2 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+      _jspx_th_c_if_2.setPageContext(_jspx_page_context);
+      _jspx_th_c_if_2.setParent(null);
+      _jspx_th_c_if_2.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${result=='pwdwrong'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+      int _jspx_eval_c_if_2 = _jspx_th_c_if_2.doStartTag();
+      if (_jspx_eval_c_if_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\n");
+          out.write("    <script>window.alert(\"请确认两次密码相同！\");</script>\n");
+          out.write("    ");
+session.setAttribute("result", null);
+          out.write('\n');
+          int evalDoAfterBody = _jspx_th_c_if_2.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_c_if_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_2);
+        return;
+      }
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_2);
+      out.write('\n');
+      //  c:if
+      org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_3 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+      _jspx_th_c_if_3.setPageContext(_jspx_page_context);
+      _jspx_th_c_if_3.setParent(null);
+      _jspx_th_c_if_3.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${result=='yes'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+      int _jspx_eval_c_if_3 = _jspx_th_c_if_3.doStartTag();
+      if (_jspx_eval_c_if_3 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\n");
+          out.write("    <script>window.alert(\"注册成功!3秒后返回登录界面！\");</script>\n");
+          out.write("    ");
+
+        session.setAttribute("result", null);
+        response.setHeader("refresh", "3;URL=login.jsp");
+    
+          out.write('\n');
+          int evalDoAfterBody = _jspx_th_c_if_3.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_c_if_3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_3);
+        return;
+      }
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_3);
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

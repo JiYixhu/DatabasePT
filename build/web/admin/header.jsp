@@ -37,6 +37,7 @@
         display: block; /* 把链接显示为块元素可使整个链接区域可点击 */
         color:white;
         text-align: center;
+        font-weight: bold;
         padding: 14px 16px;
         text-decoration: none; /* 去除下划线 */
     }

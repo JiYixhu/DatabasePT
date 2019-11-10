@@ -50,15 +50,19 @@ public class UserServlet extends HttpServlet {
             String pwd1 = request.getParameter("pwd1");
             String pwd2 = request.getParameter("pwd2");
             String tel = request.getParameter("tel");
+            System.out.println("用户名为："+username);
             String result;
-            if (pwd1.equals(pwd2)) {
+            if ("".equals(username)||"".equals(pwd1)||"".equals(pwd2)||"".equals(tel)){
+                result="isnull";
+            } else if(pwd1.equals(pwd2)) {
                 Map paramters = new HashMap();
                 paramters.put("username", username);
                 paramters.put("pwd2", pwd2);
                 paramters.put("tel", tel);
                 int rl = us.register(paramters);
                 result = (rl > 0 ? "yes" : "no");
-            } else {
+            }
+            else {
                 result = "pwdwrong";
             }
             request.setAttribute("result", result);

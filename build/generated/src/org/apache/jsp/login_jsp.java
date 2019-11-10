@@ -82,9 +82,10 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        height: 30px;\n");
       out.write("        background-color:#6699FF;\n");
       out.write("        border: none;\n");
-      out.write("        border-radius:15px;\n");
-      out.write("        \n");
+      out.write("        border-radius:15px;     \n");
       out.write("    }\n");
+      out.write("    a{color: blue; text-decoration:none;}\n");
+      out.write("    a:hover{color: aquamarine; text-decoration:underline; }\n");
       out.write("</style>\n");
       out.write("<body background=\"/DatabasePT/img/背景1.jpg\">\n");
       out.write("<center>\n");
