@@ -70,7 +70,7 @@ public class DBUtil {
         url="jdbc:mysql://localhost:3306/ithardware?zeroDateTimeBehavior=convertToNull";
         username="root";
         password="123456";
-        PageSize = 5;
+        PageSize = 10;
     }
     
     public void close() {

@@ -6,16 +6,9 @@
            align-items: center;border: 4px solid #3399ff;border-radius: 10px;
            background-color:rgba(238,238,238,0.5);
     }    
-    h1{
-        color:  #FFFFFF;
-        /*color: transparent;
-        background-color :#0066FF;*/
-        text-shadow : rgba(255,255,255,0.5) 0 5px 5px, rgba(255,255,255,0.2) 1px 3px 3px;
-        -webkit-background-clip : text;
-        margin: 30px auto 0;
-        font-size: 50px;
-        letter-spacing: 2pt;
-        font-family: SimHei;
+    .logo{
+        margin-left: 10px;
+        margin-top: 10px;   
     }
     h2{color:#000000;}
     body{
@@ -36,7 +29,9 @@
 </style>
 <body background="/DatabasePT/img/背景1.jpg">
 <center>
-    <h1>IT硬件报价系统</h1>
+    <div class="logo">
+        <img src="/DatabasePT/img/logo.jpg" width="450px" height="191px">
+    </div>
     <form class="login" action="${pageContext.request.contextPath}/LoginServlet" method="post">
         <table>
             <h2>登录</h2>

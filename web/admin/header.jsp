@@ -1,4 +1,9 @@
 <%@page contentType="text/html" pageEncoding="GB2312"%>
+<div class="logo">
+    <strong>IT硬件报价</strong>
+    <b>|</b>
+    <strong style=" font-size: 20px">专业 全面</strong>
+</div>
 <div class="box" align="center">
     <ul>
         <li><a href="${pageContext.request.contextPath}/login.jsp">登录页面</a></li>
@@ -10,13 +15,25 @@
 </div>
    
 <style>
+    .logo{
+        color:  #FFFFFF;
+        /*color: transparent;
+        background-color :#0066FF;*/
+        text-shadow : rgba(255,255,255,0.5) 0 5px 5px, rgba(255,255,255,0.2) 1px 3px 3px;
+        -webkit-background-clip : text;
+        margin-top:15px;
+        margin-left:15px;
+        font-size: 30px;
+        letter-spacing: 2pt;
+        font-family: SimHei;  
+    }
     .box{
         /* 设置宽度高度背景颜色 */
         height: 50px;
         width:100%;
         background:#66CCFF;
         position: fixed; /*固定在顶部*/
-        top: 0;/*离顶部的距离为0*/
+        top: 67px;/*离顶部的距离为0*/
     }
     .box ul{
         /* 清除ul标签的默认样式 */

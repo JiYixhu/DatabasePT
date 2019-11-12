@@ -38,7 +38,7 @@
             <td width="20%" >${hardware.HaCate}</td>
             <td bgcolor="#AFEEEE" width="15%" >硬件品牌</td>
             <td width="20%" >${hardware.HaBrand}</td>
-            <td width="20%" rowspan="2"><img src = "${hardware.HaPic}"/></td>
+            <td width="20%" rowspan="2"><img width="400" height="280" src = "${hardware.HaPic}"/></td>
         </tr>
         <tr>
             <td bgcolor="#AFEEEE" width="15%" >最新硬件价格</td>

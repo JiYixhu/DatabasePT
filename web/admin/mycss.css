@@ -6,7 +6,7 @@ h1{
 }
 .table tr:hover{background-color: #f6f6f6;}
 .table td{text-align: center;}
-.table th{background-color: #48D1CC; color:#FFFFFF; font-size:18px;}
+.table th{background-color: #48D1CC; color:#FFFFFF; font-size:18px; font-weight: lighter}
 .updateBtn,.deleteBtn{display: block;width: 60px;height: 26px;font-size: 14px;font-weight: 800;line-height: 26px;color: #fff;}
 .updateBtn{background-color: #6495ED;border: none;box-sizing: border-box;border-radius: 4px;}
 .deleteBtn{background-color: #DC143C;border: none;box-sizing: border-box;border-radius: 4px;}

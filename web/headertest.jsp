@@ -1,5 +1,9 @@
 <%@page contentType="text/html" pageEncoding="GB2312"%>
-
+<div class="logo">
+    <strong>IT硬件报价</strong>
+    <b>|</b>
+    <strong style=" font-size: 20px">专业 全面</strong>
+</div>
 <div class="top" align="center">
     <ul>
         <li><a href="${pageContext.request.contextPath}/index.jsp">登录页面</a></li>
@@ -56,7 +60,7 @@
         width:100%;
         background:#99CCFF;
         position: fixed; /*固定在顶部*/
-        top: 0;/*离顶部的距离为0*/
+        top: 50px;/*离顶部的距离为0*/
     }
     .top ul{
         /* 清除ul标签的默认样式 */
@@ -84,6 +88,16 @@
         /* 鼠标选中时背景变为黑色 */
         background-color: #FFCC99;
     }
+    .logo{color:  #FFFFFF;
+        /*color: transparent;
+        background-color :#0066FF;*/
+        text-shadow : rgba(255,255,255,0.5) 0 5px 5px, rgba(255,255,255,0.2) 1px 3px 3px;
+        -webkit-background-clip : text;
+        margin: 20px auto 0;
+        font-size: 30px;
+        letter-spacing: 2pt;
+        font-family: SimHei;
+    } 
     .cap{
         margin-top:  0px;
         margin-left: 10px;

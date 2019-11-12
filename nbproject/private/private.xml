@@ -10,14 +10,18 @@
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/admin/first.jsp</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/user/first.jsp</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/admin/second.jsp</file>
+            <file>file:/D:/码农进阶路/数据库实训/DatabasePT/src/java/Util/PageBean.java</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/src/java/servlets/UserServlet.java</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/register.jsp</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/admin/header.jsp</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/admin/forth.jsp</file>
+            <file>file:/D:/码农进阶路/数据库实训/DatabasePT/src/java/services/AdminService.java</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/headertest.jsp</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/admin/mycss.css</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/admin/PriceList.jsp</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/footer.jsp</file>
+            <file>file:/D:/码农进阶路/数据库实训/DatabasePT/src/java/Util/DBUtil.java</file>
+            <file>file:/D:/码农进阶路/数据库实训/DatabasePT/src/java/servlets/AdminServlet.java</file>
         </group>
     </open-files>
 </project-private>
