@@ -16,14 +16,15 @@
    
 <style>
     .logo{
-        color:  #FFFFFF;
+        color: #000000;
         /*color: transparent;
-        background-color :#0066FF;*/
+        background-color :#0066FF;
         text-shadow : rgba(255,255,255,0.5) 0 5px 5px, rgba(255,255,255,0.2) 1px 3px 3px;
-        -webkit-background-clip : text;
+        -webkit-background-clip : text;*/
         margin-top:15px;
         margin-left:15px;
         font-size: 30px;
+        font-weight: bold;
         letter-spacing: 2pt;
         font-family: SimHei;  
     }
@@ -46,7 +47,7 @@
     }
     .box li {    
         float:left; /* 使li内容横向浮动，即横向排列  */
-        margin-right:50px;  /* 两个li之间的距离*/
+        margin-right:35px;  /* 两个li之间的距离*/
     }
 
     .box li a{
@@ -56,6 +57,7 @@
         text-align: center;
         font-weight: bold;
         padding: 14px 16px;
+        letter-spacing: 3px;/*字符间隔*/
         text-decoration: none; /* 去除下划线 */
     }
     .box li a:hover{

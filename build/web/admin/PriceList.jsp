@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@include file="/admin/header.jsp"%>
 <link rel="stylesheet" href="admin/mycss.css"/>
-<body background="/DatabasePT/img/背景2.jpg">
+<body>
 <center>
     <br><h1>报价列表</h1><br>
     <c:set var="url" value="${pageContext.request.contextPath}/AdminServlet?flag=Pricelist"/>
@@ -21,7 +21,7 @@
                 <td>${price.HaName}</td>
                 <td>${price.BuNo}</td>
                 <td>${price.BuName}</td>
-                <td>${price.NowPrice}</td>
+                <td class="pricefocus">${price.NowPrice}</td>
                 <td>${price.NowDate}</td>
             </tr>
         </c:forEach>

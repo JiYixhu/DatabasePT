@@ -5,16 +5,15 @@ import java.util.Map;
 import Util.DBUtil;
 import Util.PageBean;
 
-
-
 public class AdminService {
+
     private DBUtil db = new DBUtil();
 
     //验证登录信息
     public boolean checkLogin(String MaID, String MaPwd) {
         String sql = "select * from manager where MaID = ? and MaPwd = ?";
         //String sql = "select * from manager where MaID='" + MaID + "' and MaPwd='" + MaPwd + "'";
-        Map map = db.getMap(sql, new String[]{MaID,MaPwd});
+        Map map = db.getMap(sql, new String[]{MaID, MaPwd});
         if (map == null) {
             return false;
         } else {
@@ -22,6 +21,7 @@ public class AdminService {
         }
     }
 //添加硬件信息
+
     public int add(Map file, Map parameters) {
         int result = 0;
         String HaNo = (String) parameters.get("HaNo");
@@ -32,7 +32,7 @@ public class AdminService {
         String HaPara = (String) parameters.get("HaPara");
         String HaPic = (String) file.get("HaPic");
         String sql = "insert into hardware values(?,?,?,?,?,?,?,now())";
-        result = db.update(sql, new String[]{HaNo, HaName, HaCate, HaBrand, HaPrice, HaPara,HaPic});
+        result = db.update(sql, new String[]{HaNo, HaName, HaCate, HaBrand, HaPrice, HaPara, HaPic});
         return result;
     }
 
@@ -45,20 +45,22 @@ public class AdminService {
         String sql = "select * from businessman";
         return db.getPageBean(sql, new String[]{}, curPage);
     }
+
     public PageBean Calist(int curPage) {
         String sql = "select * from catagory";
         return db.getPageBean(sql, new String[]{}, curPage);
     }
+
     public PageBean Brlist(int curPage) {
         String sql = "select * from brand";
         return db.getPageBean(sql, new String[]{}, curPage);
     }
-    
-    public PageBean PriceList(int curPage,String HaNo) {
+
+    public PageBean PriceList(int curPage, String HaNo) {
         String sql = "select * from updateprice where HaNo= ?";
         return db.getPageBean(sql, new String[]{HaNo}, curPage);
     }
-    
+
     public Map getById(String HaNo) {
         String sql = "select * from hardware where HaNo = ?";
         return db.getMap(sql, new String[]{HaNo});
@@ -87,27 +89,28 @@ public class AdminService {
         String sql = "delete from hardware where HaNo = ?";
         return db.update(sql, new String[]{HaNo});
     }
-    public int addBrand(Map parameters){
-        String HaBrandNo = (String)parameters.get("HaBrandNo");
-        String HaBrand = (String)parameters.get("HaBrand");
-        String sql="insert into brand values(?,?)";
-        return db.update(sql, new String[]{HaBrandNo,HaBrand});
+
+    public int addBrand(Map parameters) {
+        String HaBrandNo = (String) parameters.get("HaBrandNo");
+        String HaBrand = (String) parameters.get("HaBrand");
+        String sql = "insert into brand values(?,?)";
+        return db.update(sql, new String[]{HaBrandNo, HaBrand});
     }
-    
-    public int addCate(Map parameters){
-        String HaCateNo = (String)parameters.get("HaCateNo");
-        String HaCate = (String)parameters.get("HaCate");
-        String sql="insert into catagory values(?,?)";
-        return db.update(sql, new String[]{HaCateNo,HaCate});
+
+    public int addCate(Map parameters) {
+        String HaCateNo = (String) parameters.get("HaCateNo");
+        String HaCate = (String) parameters.get("HaCate");
+        String sql = "insert into catagory values(?,?)";
+        return db.update(sql, new String[]{HaCateNo, HaCate});
     }
-    
-    public int deleteBrand(Map parameters){
+
+    public int deleteBrand(Map parameters) {
         String HaBrandNo = (String) parameters.get("HaBrandNo");
         String sql = "delete from brand where HaBrandNo = ?";
         return db.update(sql, new String[]{HaBrandNo});
     }
-    
-    public int deleteCate(Map parameters){
+
+    public int deleteCate(Map parameters) {
         String HaCateNo = (String) parameters.get("HaCateNo");
         String sql = "delete from catagory where HaCateNo = ?";
         return db.update(sql, new String[]{HaCateNo});

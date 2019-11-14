@@ -3,7 +3,7 @@
 <%@include file="/admin/header.jsp"%>
 <style>
     h2{
-        margin-top: 50px;
+        margin-top: 80px;
         font-size: 30px;
         color: transparent;
         background-color :#008B8B;

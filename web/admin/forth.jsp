@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@include file="/admin/header.jsp"%>
 <link rel="stylesheet" href="admin/mycss.css"/>
-<body background="/DatabasePT/img/±³¾°2.jpg">
+<body>
 <center>
     <br><h1>Æ·ÅÆÁÐ±í</h1><br>
     <c:set var="url" value="${pageContext.request.contextPath}/AdminServlet?flag=Brlist" />

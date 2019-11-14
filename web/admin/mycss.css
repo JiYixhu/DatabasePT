@@ -10,3 +10,4 @@ h1{
 .updateBtn,.deleteBtn{display: block;width: 60px;height: 26px;font-size: 14px;font-weight: 800;line-height: 26px;color: #fff;}
 .updateBtn{background-color: #6495ED;border: none;box-sizing: border-box;border-radius: 4px;}
 .deleteBtn{background-color: #DC143C;border: none;box-sizing: border-box;border-radius: 4px;}
+.pricefocus{color: #DC143C}
