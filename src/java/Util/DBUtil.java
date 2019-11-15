@@ -196,4 +196,20 @@ public class DBUtil {
         pb.setData(data);
         return pb;
     }
+
+    public Category getCategory(String sql, String[] params) {
+        String newsql=sql;
+        List data = this.getList(newsql, params);
+        Category cate=new Category();
+        cate.setData(data);
+        return cate;
+    }
+
+    public Brand getBrand(String sql, String[] params) {
+        String newsql=sql;
+        List data = this.getList(newsql, params);
+        Brand brand=new Brand();
+        brand.setData(data);
+        return brand;
+    }
 }

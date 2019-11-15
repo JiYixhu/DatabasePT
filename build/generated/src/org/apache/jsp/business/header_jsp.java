@@ -1,4 +1,4 @@
-package org.apache.jsp.admin;
+package org.apache.jsp.business;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -54,16 +54,10 @@ public final class header_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("/login.jsp\">登录页面</a></li>\n");
       out.write("        <li><a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/AdminServlet?flag=Halist\">硬件列表</a></li>\n");
+      out.write("/BusinessServlet?flag=Halist\">硬件列表</a></li>\n");
       out.write("        <li><a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/AdminServlet?flag=Bulist\">商家列表</a></li>\n");
-      out.write("        <li><a href=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/AdminServlet?flag=Calist\">类别列表</a></li>\n");
-      out.write("        <li><a href=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/AdminServlet?flag=Brlist\">品牌列表</a></li>\n");
+      out.write("/BusinessServlet?flag=Bulist\">报价列表</a></li>\n");
       out.write("    </ul>\n");
       out.write("</div>\n");
       out.write("   \n");

@@ -45,7 +45,7 @@ public class LoginServlet extends HttpServlet {
                 BusinessService bs = new BusinessService();
                 if (bs.checkLogin(username, password)) {
                     request.getSession().setAttribute("loginResult","ok");
-                    rd = request.getRequestDispatcher("BusinessServlet?flag=list");
+                    rd = request.getRequestDispatcher("BusinessServlet?flag=Searchlist");
                     rd.forward(request, response);
                     return;
                 }

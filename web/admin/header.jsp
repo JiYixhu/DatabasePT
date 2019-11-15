@@ -17,10 +17,6 @@
 <style>
     .logo{
         color: #000000;
-        /*color: transparent;
-        background-color :#0066FF;
-        text-shadow : rgba(255,255,255,0.5) 0 5px 5px, rgba(255,255,255,0.2) 1px 3px 3px;
-        -webkit-background-clip : text;*/
         margin-top:15px;
         margin-left:15px;
         font-size: 30px;

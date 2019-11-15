@@ -1,5 +1,7 @@
 package services;
 
+import Util.Brand;
+import Util.Category;
 import Util.DBUtil;
 import Util.PageBean;
 import java.util.Map;
@@ -17,7 +19,17 @@ public class BusinessService {
             return true;
         }
     }
-
+    
+    public Category SearchCate(){
+        String sql="select * from catagory";
+        return db.getCategory(sql, new String[]{});
+    }
+    
+    public Brand SearchBrand() {
+        String sql="select * from brand";
+        return db.getBrand(sql, new String[]{});
+    }
+    
     public PageBean Searchlist(String cate, String brand, String name, int curPage) {
         String sql = null;
         if (cate == null || cate.equals("")) {//类别为空
@@ -31,27 +43,27 @@ public class BusinessService {
                 }
             } else {    //品牌不为空
                 if (name == null || name.equals("")) {//关键字为空
-                    sql = "select * from hardware where HaBrand = ?";
+                    sql = "select * from hardware where HaBrandNo = ?";
                     return db.getPageBean(sql, new String[]{brand}, curPage);
                 } else {   //关键字不为空
-                    sql = "select * from hardware where HaBrand = ? and HaName like ?";
+                    sql = "select * from hardware where HaBrandNo = ? and HaName like ?";
                     return db.getPageBean(sql, new String[]{brand,"%" + name + "%"}, curPage);
                 }
             }
         } else if (brand == null || brand.equals("")) {//类别不为空，品牌为空
             if (name == null || name.equals("")) {  //关键字为空
-                sql = "select * from hardware where HaCate = ?";
+                sql = "select * from hardware where HaCateNo = ?";
                 return db.getPageBean(sql, new String[]{cate}, curPage);
             } else {    //关键字不为空
-                sql = "select * from hardware where HaCate = ? and HaName like ?";
+                sql = "select * from hardware where HaCateNo = ? and HaName like ?";
                 return db.getPageBean(sql, new String[]{cate, "%" + name + "%"}, curPage);
             }
         } else {                           //类别品牌都不为空
             if (name == null || name.equals("")) {//关键字为空
-                sql = "select * from hardware where HaCate = ? and HaBrand = ?";
+                sql = "select * from hardware where HaCateNo = ? and HaBrandNo = ?";
                 return db.getPageBean(sql, new String[]{cate,brand}, curPage);
             } else {    //关键字不为空
-                sql = "select * from hardware where HaCate = ? and HaBrand = ? and HaName like ?";
+                sql = "select * from hardware where HaCateNo = ? and HaBrandNo = ? and HaName like ?";
                 return db.getPageBean(sql, new String[]{cate,brand,"%" + name + "%"}, curPage);
             }
         }

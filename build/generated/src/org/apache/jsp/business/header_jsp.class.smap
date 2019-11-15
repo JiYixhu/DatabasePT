@@ -4,9 +4,9 @@ JSP
 *S JSP
 *F
 + 0 header.jsp
-admin/header.jsp
+business/header.jsp
 *L
 1,8:44
-9,5:52,3
-14,51:67
+9,3:52,3
+12,51:61
 *E
