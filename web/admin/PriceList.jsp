@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="admin/mycss.css"/>
 <body>
 <center>
-    <br><h1>报价列表</h1><br>
+    <br><h1>报价表</h1><br>
     <c:set var="url" value="${pageContext.request.contextPath}/AdminServlet?flag=Pricelist"/>
     <table class="table" width="80%">
         <tr style="background-color: #eee;">

@@ -19,17 +19,41 @@ public class BusinessService {
             return true;
         }
     }
-    
-    public Category SearchCate(){
-        String sql="select * from catagory";
+
+    public PageBean Pricelist(String Name1, String Name2, int curPage) {
+        String sql = null;
+        if (Name1 == null || Name1.equals("")) {
+            if (Name2 == null || Name2.equals("")) {
+                sql = "select * from updateprice order by NowDate desc";
+                return db.getPageBean(sql, new String[]{}, curPage);
+            }
+            else{
+                sql = "select * from updateprice where BuName like ? order by NowDate desc";
+                return db.getPageBean(sql, new String[]{"%" + Name2 + "%"}, curPage);
+            }
+        }
+        else{
+            if (Name2 == null || Name2.equals("")) {
+                sql = "select * from updateprice where HaName like ? order by NowDate desc";
+                return db.getPageBean(sql, new String[]{"%" + Name1 + "%"}, curPage);
+            }
+            else{
+                sql = "select * from updateprice where HaName like ? and BuName like ? order by NowDate desc";
+                return db.getPageBean(sql, new String[]{"%" + Name1 + "%","%" + Name2 + "%"}, curPage);
+            }
+        }
+    }
+
+    public Category SearchCate() {
+        String sql = "select * from catagory";
         return db.getCategory(sql, new String[]{});
     }
-    
+
     public Brand SearchBrand() {
-        String sql="select * from brand";
+        String sql = "select * from brand";
         return db.getBrand(sql, new String[]{});
     }
-    
+
     public PageBean Searchlist(String cate, String brand, String name, int curPage) {
         String sql = null;
         if (cate == null || cate.equals("")) {//类别为空
@@ -43,28 +67,28 @@ public class BusinessService {
                 }
             } else {    //品牌不为空
                 if (name == null || name.equals("")) {//关键字为空
-                    sql = "select * from hardware where HaBrandNo = ?";
+                    sql = "select * from hardware where HaBrand = ?";
                     return db.getPageBean(sql, new String[]{brand}, curPage);
                 } else {   //关键字不为空
-                    sql = "select * from hardware where HaBrandNo = ? and HaName like ?";
-                    return db.getPageBean(sql, new String[]{brand,"%" + name + "%"}, curPage);
+                    sql = "select * from hardware where HaBrand = ? and HaName like ?";
+                    return db.getPageBean(sql, new String[]{brand, "%" + name + "%"}, curPage);
                 }
             }
         } else if (brand == null || brand.equals("")) {//类别不为空，品牌为空
             if (name == null || name.equals("")) {  //关键字为空
-                sql = "select * from hardware where HaCateNo = ?";
+                sql = "select * from hardware where HaCate = ?";
                 return db.getPageBean(sql, new String[]{cate}, curPage);
             } else {    //关键字不为空
-                sql = "select * from hardware where HaCateNo = ? and HaName like ?";
+                sql = "select * from hardware where HaCate = ? and HaName like ?";
                 return db.getPageBean(sql, new String[]{cate, "%" + name + "%"}, curPage);
             }
         } else {                           //类别品牌都不为空
             if (name == null || name.equals("")) {//关键字为空
-                sql = "select * from hardware where HaCateNo = ? and HaBrandNo = ?";
-                return db.getPageBean(sql, new String[]{cate,brand}, curPage);
+                sql = "select * from hardware where HaCate = ? and HaBrand = ?";
+                return db.getPageBean(sql, new String[]{cate, brand}, curPage);
             } else {    //关键字不为空
-                sql = "select * from hardware where HaCateNo = ? and HaBrandNo = ? and HaName like ?";
-                return db.getPageBean(sql, new String[]{cate,brand,"%" + name + "%"}, curPage);
+                sql = "select * from hardware where HaCate = ? and HaBrand = ? and HaName like ?";
+                return db.getPageBean(sql, new String[]{cate, brand, "%" + name + "%"}, curPage);
             }
         }
     }

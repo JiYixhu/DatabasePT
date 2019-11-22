@@ -33,9 +33,9 @@ public class BusinessServlet extends HttpServlet {
         BusinessService bs = new BusinessService();
         if (flag.equals("Searchlist")) {
             String page = request.getParameter("page");
-            String cate = request.getParameter("cate");
-            String brand = request.getParameter("brand");
-            String name = request.getParameter("name");
+            String cate = request.getParameter("selectcate");
+            String brand = request.getParameter("selectbrand");
+            String name = request.getParameter("selectname");
             int curPage = 0;
             if (page == null || page.length() < 1) {
                 curPage = 1;
@@ -48,6 +48,8 @@ public class BusinessServlet extends HttpServlet {
             request.setAttribute("bbrand", bbrand);//!!!!
             PageBean pageBean = bs.Searchlist(cate,brand,name,curPage);
             request.setAttribute("pageBean", pageBean);
+            request.setAttribute("parameCate",cate);
+            request.setAttribute("parameBrand",brand);
             rd = request.getRequestDispatcher("/business/first.jsp");
             rd.forward(request, response);      
         }
@@ -57,6 +59,21 @@ public class BusinessServlet extends HttpServlet {
             request.setAttribute("hardware", hardware);
             rd = request.getRequestDispatcher("/business/showHadetail.jsp");
             rd.forward(request, response);
+        }
+        else if ("Pricelist".equals(flag)) {
+            String Name1 = request.getParameter("Name1");
+            String Name2 = request.getParameter("Name2");
+            String page = request.getParameter("page");
+            int curPage = 0;
+            if (page == null || page.length() < 1) {
+                curPage = 1;
+            } else {
+                curPage = Integer.parseInt(page);
+            }
+            PageBean pageBean = bs.Pricelist(Name1,Name2,curPage);//!!!!
+            request.setAttribute("pageBean", pageBean);
+            rd = request.getRequestDispatcher("/business/second.jsp");
+            rd.forward(request, response);  
         }
     }
 

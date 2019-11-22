@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class second_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -87,7 +87,7 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("/BusinessServlet?flag=Searchlist\">硬件列表</a></li>\n");
       out.write("        <li><a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/BusinessServlet?flag=Bulist\">报价列表</a></li>\n");
+      out.write("/BusinessServlet?flag=Pricelist\">报价列表</a></li>\n");
       out.write("    </ul>\n");
       out.write("</div>\n");
       out.write("   \n");
@@ -142,44 +142,31 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<link rel=\"stylesheet\" href=\"business/mycss.css\"/>\n");
       out.write("<body>\n");
       out.write("<center>\n");
-      out.write("    <br><h1>硬件列表</h1><br>\n");
+      out.write("    <br><h1>实时报价列表</h1><br>\n");
       out.write("    ");
       if (_jspx_meth_c_set_0(_jspx_page_context))
         return;
       out.write("\n");
       out.write("    <form action=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${url}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\" method=\"post\" style=\"margin-bottom: 10px;\">\n");
-      out.write("        请选择类别：<select name=\"cate\" style=\"width: 100px;height: 30px;\">\n");
-      out.write("            <option value=\"\">全部类别</option>\n");
-      out.write("            ");
-      if (_jspx_meth_c_forEach_0(_jspx_page_context))
-        return;
-      out.write("\n");
-      out.write("        </select>\n");
-      out.write("        ");
-      out.write("\n");
-      out.write("        请选择品牌：<select name=\"brand\" style=\"width: 100px;height: 30px;\">\n");
-      out.write("            <option value=\"\">全部品牌</option>\n");
-      out.write("            ");
-      if (_jspx_meth_c_forEach_1(_jspx_page_context))
-        return;
-      out.write("\n");
-      out.write("        </select>\n");
-      out.write("        请输入硬件名称关键字：<input  style=\"width: 200px;height: 30px;\" type=\"text\" name=\"name\">\n");
-      out.write("        <input type=\"submit\" value=\"查看\" style=\"width: 100px;color: #FFFFFF;height: 30px;background-color:#FFA500;border: none;border-radius: 4px;\">\n");
+      out.write("\" method=\"post\" style=\"margin-bottom: 10px;\"> \n");
+      out.write("        1.<input  placeholder=\"输入完整硬件编号\" style=\"width: 200px;height: 30px;\" type=\"text\" name=\"HaNo\">\n");
+      out.write("        2.<input placeholder=\"输入硬件名称关键字\" style=\"width: 200px;height: 30px;\" type=\"text\" name=\"HaName\">\n");
+      out.write("        3.<input  placeholder=\"输入完整商家编号\" style=\"width: 200px;height: 30px;\" type=\"text\" name=\"BuNo\">\n");
+      out.write("        4.<input  placeholder=\"输入商家名称关键字\" style=\"width: 200px;height: 30px;\" type=\"text\" name=\"BuName\">\n");
+      out.write("        <input type=\"submit\" value=\"查看\" style=\"width: 100px;color: #FFFFFF;height: 30px;background-color:#FFA500;border: none;border-radius: 4px;\">  \n");
       out.write("    </form>\n");
-      out.write("    <table class=\"table\" width=\"80%\">\n");
+      out.write("    <table class=\"table\" width=\"70%\">\n");
       out.write("        <tr style=\"background-color: #eee;\">\n");
-      out.write("            <th width=\"15%\">硬件编号</th>\n");
-      out.write("            <th width=\"26%\">硬件名称</th>\n");
-      out.write("            <th width=\"12%\">硬件类别</th>\n");
-      out.write("            <th width=\"12%\">硬件品牌</th>\n");
-      out.write("            <th width=\"20%\">更新日期</th>\n");
-      out.write("            <th colspan=\"2\" width=\"15%\">编辑</th>\n");
+      out.write("            <th width=\"10%\">硬件编号</th>\n");
+      out.write("            <th width=\"15%\">硬件名称</th>\n");
+      out.write("            <th width=\"7%\">商家编号</th>\n");
+      out.write("            <th width=\"11%\">商家名称</th>\n");
+      out.write("            <th width=\"7%\">当前报价</th>\n");
+      out.write("            <th width=\"20%\">更新时间</th>\n");
       out.write("        </tr>\n");
       out.write("        ");
-      if (_jspx_meth_c_forEach_2(_jspx_page_context))
+      if (_jspx_meth_c_forEach_0(_jspx_page_context))
         return;
       out.write("\n");
       out.write("    </table>\n");
@@ -261,7 +248,7 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_th_c_set_0.setPageContext(_jspx_page_context);
     _jspx_th_c_set_0.setParent(null);
     _jspx_th_c_set_0.setVar("url");
-    _jspx_th_c_set_0.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}/BusinessServlet?flag=Searchlist", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_set_0.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}/BusinessServlet?flag=Pricelist", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     int _jspx_eval_c_set_0 = _jspx_th_c_set_0.doStartTag();
     if (_jspx_th_c_set_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_c_set_var_value_nobody.reuse(_jspx_th_c_set_0);
@@ -279,21 +266,40 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_forEach_0.setPageContext(_jspx_page_context);
     _jspx_th_c_forEach_0.setParent(null);
-    _jspx_th_c_forEach_0.setVar("cate");
-    _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${category.data}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_forEach_0.setVar("price");
+    _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageBean.data}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     int[] _jspx_push_body_count_c_forEach_0 = new int[] { 0 };
     try {
       int _jspx_eval_c_forEach_0 = _jspx_th_c_forEach_0.doStartTag();
       if (_jspx_eval_c_forEach_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\n");
-          out.write("                <option value=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${cate.HaCateNo}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("            <tr>\n");
+          out.write("                <td><a href=\"");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("/BusinessServlet?flag=showHadetail&id=");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${price.HaNo}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write('"');
           out.write('>');
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${cate.HaCate}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</option>\n");
-          out.write("            ");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${price.HaNo}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</a></td>\n");
+          out.write("                <td>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${price.HaName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</td>\n");
+          out.write("                <td>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${price.BuNo}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</td>\n");
+          out.write("                <td>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${price.BuName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</td>\n");
+          out.write("                <td>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${price.NowPrice}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</td>\n");
+          out.write("                <td>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${price.NowDate}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</td>\n");
+          out.write("            </tr>\n");
+          out.write("        ");
           int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
@@ -309,106 +315,6 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
     } finally {
       _jspx_th_c_forEach_0.doFinally();
       _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_0);
-    }
-    return false;
-  }
-
-  private boolean _jspx_meth_c_forEach_1(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  c:forEach
-    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_1 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
-    _jspx_th_c_forEach_1.setPageContext(_jspx_page_context);
-    _jspx_th_c_forEach_1.setParent(null);
-    _jspx_th_c_forEach_1.setVar("brand");
-    _jspx_th_c_forEach_1.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${bbrand.data}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-    int[] _jspx_push_body_count_c_forEach_1 = new int[] { 0 };
-    try {
-      int _jspx_eval_c_forEach_1 = _jspx_th_c_forEach_1.doStartTag();
-      if (_jspx_eval_c_forEach_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-        do {
-          out.write("\n");
-          out.write("                <option value=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${brand.HaBrandNo}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write('"');
-          out.write('>');
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${brand.HaBrand}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</option>\n");
-          out.write("            ");
-          int evalDoAfterBody = _jspx_th_c_forEach_1.doAfterBody();
-          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-            break;
-        } while (true);
-      }
-      if (_jspx_th_c_forEach_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        return true;
-      }
-    } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_c_forEach_1[0]-- > 0)
-        out = _jspx_page_context.popBody();
-      _jspx_th_c_forEach_1.doCatch(_jspx_exception);
-    } finally {
-      _jspx_th_c_forEach_1.doFinally();
-      _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_1);
-    }
-    return false;
-  }
-
-  private boolean _jspx_meth_c_forEach_2(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  c:forEach
-    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_2 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
-    _jspx_th_c_forEach_2.setPageContext(_jspx_page_context);
-    _jspx_th_c_forEach_2.setParent(null);
-    _jspx_th_c_forEach_2.setVar("hardware");
-    _jspx_th_c_forEach_2.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageBean.data}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-    int[] _jspx_push_body_count_c_forEach_2 = new int[] { 0 };
-    try {
-      int _jspx_eval_c_forEach_2 = _jspx_th_c_forEach_2.doStartTag();
-      if (_jspx_eval_c_forEach_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-        do {
-          out.write("\n");
-          out.write("            <tr>\n");
-          out.write("                <td><a href=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("/BusinessServlet?flag=showHadetail&id=");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${hardware.HaNo}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write('"');
-          out.write('>');
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${hardware.HaNo}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</a></td>\n");
-          out.write("                <td>");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${hardware.HaName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</td>\n");
-          out.write("                <td>");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${hardware.HaCate}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</td>\n");
-          out.write("                <td>");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${hardware.HaBrand}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</td>\n");
-          out.write("                <td>");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${hardware.HaDate}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</td>\n");
-          out.write("            </tr>\n");
-          out.write("        ");
-          int evalDoAfterBody = _jspx_th_c_forEach_2.doAfterBody();
-          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-            break;
-        } while (true);
-      }
-      if (_jspx_th_c_forEach_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        return true;
-      }
-    } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_c_forEach_2[0]-- > 0)
-        out = _jspx_page_context.popBody();
-      _jspx_th_c_forEach_2.doCatch(_jspx_exception);
-    } finally {
-      _jspx_th_c_forEach_2.doFinally();
-      _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_2);
     }
     return false;
   }

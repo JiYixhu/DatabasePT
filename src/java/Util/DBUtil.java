@@ -147,7 +147,7 @@ public class DBUtil {
     public Map getMap(String sql, String[] params) {
        
         List list = getList(sql, params);
-         System.out.println(sql);
+        System.out.println(sql);
         if (list.isEmpty()) {
             System.out.println("list is null");
             return null;
@@ -189,6 +189,7 @@ public class DBUtil {
     public PageBean getPageBean(String sql, String[] params, int curpage) {
         String newsql = sql + " limit " + (curpage - 1) * PageSize + "," + PageSize;//limit限制检索条数
         List data = this.getList(newsql, params);
+        System.out.println(sql);
         PageBean pb = new PageBean();
         pb.setCurpage(curpage);
         pb.setPageSize(PageSize);

@@ -1,5 +1,5 @@
 <%@page contentType="text/html" pageEncoding="GB2312"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>s
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@include file="/business/header.jsp"%>
 <style>
     h2{
@@ -31,7 +31,6 @@
             <td bgcolor="#AFEEEE" width="15%" >硬件名称</td>
             <td width="20%" >${hardware.HaName}</td>
             <td bgcolor="#AFEEEE" width="20%" >硬件图片</td>
-            
         </tr>
         <tr>
             <td bgcolor="#AFEEEE" width="15%" >硬件类别</td>
@@ -52,8 +51,7 @@
         </tr>
         <tr>
             <td colspan="5">
-                <a href="${pageContext.request.contextPath}/AdminServlet?flag=PriceList&id=${hardware.HaNo}">查看报价信息</a>
-                <a href="${pageContext.request.contextPath}/AdminServlet?flag=Halist">返回</a>
+                <a href="${pageContext.request.contextPath}/BusinessServlet?flag=Searchlist">返回</a>
             </td>
         </tr>
     </table>
