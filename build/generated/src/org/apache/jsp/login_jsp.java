@@ -98,9 +98,9 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            </tr>\n");
       out.write("            <tr>    \n");
       out.write("                <td style=\"color:#333333\">\n");
-      out.write("                    管理员：<input type=\"radio\" name=\"role\" value=\"1\" checked>\n");
-      out.write("                    商家：<input type=\"radio\" name=\"role\" value=\"2\">\n");
-      out.write("                    买家：<input type=\"radio\" name=\"role\" value=\"3\">\n");
+      out.write("                    管理员<input type=\"radio\" name=\"role\" value=\"1\" checked>\n");
+      out.write("                    &nbsp&nbsp商家<input type=\"radio\" name=\"role\" value=\"2\">\n");
+      out.write("                    &nbsp&nbsp买家<input type=\"radio\" name=\"role\" value=\"3\">\n");
       out.write("                </td>\n");
       out.write("            </tr>\n");
       out.write("            <tr>\n");
@@ -136,6 +136,7 @@ session.setAttribute("loginResult", null);
         return;
       }
       _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+      out.write('\n');
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

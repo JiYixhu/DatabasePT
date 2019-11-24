@@ -6,6 +6,11 @@
            align-items: center;border: 4px solid #3399ff;border-radius: 10px;
            background-color:rgba(238,238,238,0.5);
     }    
+    .dq{
+        text-align: justify;
+        text-align-last: justify;
+        display:inline-block;
+    }
     h1{
         color:  #FFFFFF;
         /*color: transparent;
@@ -37,6 +42,7 @@
         border-top: 0px;border-left: 0px;border-right: 0px;
         background-color: transparent;
         height: 30px;
+        width: 150px;
     }
     .tt{width: 100%;height: 30px;border:1px solid #3399ff;padding-left: 10px;border-radius: 5px;}/*备用样式*/
 </style>
@@ -47,16 +53,16 @@
         <table>
             <h2>注册</h2>
             <tr>
-                <td>请输入用户名:</td><td><input class="t" name="username" placeholder="十三个字符以内" type="text" ></td>
+                <td><div class="dq">请输入用户名:</div></td><td><input class="t" name="username" placeholder="十三个字符以内" type="text" ></td>
             </tr>
             <tr>
-                <td>请输入密码:</td><td><input class="t" name="pwd1" placeholder="十个字符以内" type="password"></td>
+                <td><div class="dq">请输入密码:</div></td><td><input class="t" name="pwd1" placeholder="十个字符以内" type="password"></td>
             </tr>
             <tr>    
-                <td>请确认密码：</td><td><input class="t" name="pwd2" placeholder="十个字符以内" type="password"></td>
+                <td><div class="dq">请确认密码:</div></td><td><input class="t" name="pwd2" placeholder="十个字符以内" type="password"></td>
             </tr>
             <tr>    
-                <td>请输入手机号：</td><td><input class="t" name="tel" placeholder="中国大陆11位手机号" type="text"></td>
+                <td><div class="dq">请输入手机号:</div></td><td><input class="t" name="tel" placeholder="中国大陆11位手机号" type="text"></td>
             </tr>
         </table>
         <br>

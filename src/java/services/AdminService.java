@@ -57,7 +57,7 @@ public class AdminService {
     }
 
     public PageBean PriceList(int curPage, String HaNo) {
-        String sql = "select * from updateprice where HaNo= ?";
+        String sql = "select * from updateprice where HaNo= ? order by NowDate desc";
         return db.getPageBean(sql, new String[]{HaNo}, curPage);
     }
 

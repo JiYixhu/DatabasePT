@@ -5,6 +5,7 @@ import Util.Category;
 import Util.PageBean;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.Map;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -42,25 +43,23 @@ public class BusinessServlet extends HttpServlet {
             } else {
                 curPage = Integer.parseInt(page);
             }
-            Category category =bs.SearchCate();
+            Category category = bs.SearchCate();
             request.setAttribute("category", category);//!!!!
-            Brand bbrand =bs.SearchBrand();
+            Brand bbrand = bs.SearchBrand();
             request.setAttribute("bbrand", bbrand);//!!!!
-            PageBean pageBean = bs.Searchlist(cate,brand,name,curPage);
+            PageBean pageBean = bs.Searchlist(cate, brand, name, curPage);
             request.setAttribute("pageBean", pageBean);
-            request.setAttribute("parameCate",cate);
-            request.setAttribute("parameBrand",brand);
+            request.setAttribute("parameCate", cate);
+            request.setAttribute("parameBrand", brand);
             rd = request.getRequestDispatcher("/business/first.jsp");
-            rd.forward(request, response);      
-        }
-        else if ("showHadetail".equals(flag)) {
+            rd.forward(request, response);
+        } else if ("showHadetail".equals(flag)) {
             String id = request.getParameter("id");
             Map hardware = bs.getById(id);
             request.setAttribute("hardware", hardware);
             rd = request.getRequestDispatcher("/business/showHadetail.jsp");
             rd.forward(request, response);
-        }
-        else if ("Pricelist".equals(flag)) {
+        } else if ("Pricelist".equals(flag)) {
             String Name1 = request.getParameter("Name1");
             String Name2 = request.getParameter("Name2");
             String page = request.getParameter("page");
@@ -70,10 +69,33 @@ public class BusinessServlet extends HttpServlet {
             } else {
                 curPage = Integer.parseInt(page);
             }
-            PageBean pageBean = bs.Pricelist(Name1,Name2,curPage);//!!!!
+            PageBean pageBean = bs.Pricelist(Name1, Name2, curPage);//!!!!
             request.setAttribute("pageBean", pageBean);
             rd = request.getRequestDispatcher("/business/second.jsp");
-            rd.forward(request, response);  
+            rd.forward(request, response);
+        } else if ("add".equals(flag)) {
+            String THaNo = request.getParameter("THaNo");
+            String TBuNo = request.getParameter("TBuNo");
+            double TNowPrice = Double.parseDouble(request.getParameter("TNowPrice"));
+            String TPwd = request.getParameter("TPwd");
+            if (bs.checkLogin2(TBuNo, TPwd)) {
+                request.getSession().setAttribute("PwdResult", "ok");
+                Map paramters = new HashMap();
+                paramters.put("THaNo", THaNo);
+                paramters.put("TBuNo", TBuNo);
+                paramters.put("TNowPrice", TNowPrice);
+                int rl = bs.add(paramters);
+                String addresult = (rl > 0 ? "ok" : "no");
+                request.getSession().setAttribute("addresult",addresult);
+                rd = request.getRequestDispatcher("/business/third.jsp");
+                rd.forward(request, response);
+                return;
+            } else {
+                request.getSession().setAttribute("PwdResult", "no");
+                rd = request.getRequestDispatcher("/business/third.jsp");
+                rd.forward(request, response);
+                return;
+            }
         }
     }
 

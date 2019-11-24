@@ -43,9 +43,9 @@
             </tr>
             <tr>    
                 <td style="color:#333333">
-                    管理员：<input type="radio" name="role" value="1" checked>
-                    商家：<input type="radio" name="role" value="2">
-                    买家：<input type="radio" name="role" value="3">
+                    管理员<input type="radio" name="role" value="1" checked>
+                    &nbsp&nbsp商家<input type="radio" name="role" value="2">
+                    &nbsp&nbsp买家<input type="radio" name="role" value="3">
                 </td>
             </tr>
             <tr>

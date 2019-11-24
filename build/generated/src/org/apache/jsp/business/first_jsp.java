@@ -87,7 +87,10 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("/BusinessServlet?flag=Searchlist\">硬件列表</a></li>\n");
       out.write("        <li><a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/BusinessServlet?flag=Bulist\">报价列表</a></li>\n");
+      out.write("/BusinessServlet?flag=Pricelist\">报价列表</a></li>\n");
+      out.write("        <li><a href=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("/BusinessServlet?flag=Pricelist\">添加报价</a></li>\n");
       out.write("    </ul>\n");
       out.write("</div>\n");
       out.write("   \n");
@@ -150,7 +153,7 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <form action=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${url}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\" method=\"post\" style=\"margin-bottom: 10px;\">\n");
-      out.write("        请选择类别：<select name=\"cate\" style=\"width: 100px;height: 30px;\">\n");
+      out.write("        请选择类别：<select name=\"selectcate\" style=\"width: 100px;height: 30px;\">\n");
       out.write("            <option value=\"\">全部类别</option>\n");
       out.write("            ");
       if (_jspx_meth_c_forEach_0(_jspx_page_context))
@@ -159,24 +162,23 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </select>\n");
       out.write("        ");
       out.write("\n");
-      out.write("        请选择品牌：<select name=\"brand\" style=\"width: 100px;height: 30px;\">\n");
+      out.write("        请选择品牌：<select name=\"selectbrand\" style=\"width: 100px;height: 30px;\">\n");
       out.write("            <option value=\"\">全部品牌</option>\n");
       out.write("            ");
       if (_jspx_meth_c_forEach_1(_jspx_page_context))
         return;
       out.write("\n");
       out.write("        </select>\n");
-      out.write("        请输入硬件名称关键字：<input  style=\"width: 200px;height: 30px;\" type=\"text\" name=\"name\">\n");
+      out.write("        请输入硬件名称关键字：<input  style=\"width: 200px;height: 30px;\" type=\"text\" name=\"selectname\">\n");
       out.write("        <input type=\"submit\" value=\"查看\" style=\"width: 100px;color: #FFFFFF;height: 30px;background-color:#FFA500;border: none;border-radius: 4px;\">\n");
       out.write("    </form>\n");
-      out.write("    <table class=\"table\" width=\"80%\">\n");
+      out.write("    <table class=\"table\" width=\"75%\">\n");
       out.write("        <tr style=\"background-color: #eee;\">\n");
-      out.write("            <th width=\"15%\">硬件编号</th>\n");
-      out.write("            <th width=\"26%\">硬件名称</th>\n");
-      out.write("            <th width=\"12%\">硬件类别</th>\n");
-      out.write("            <th width=\"12%\">硬件品牌</th>\n");
+      out.write("            <th width=\"10%\">硬件编号</th>\n");
+      out.write("            <th width=\"25%\">硬件名称</th>\n");
+      out.write("            <th width=\"10%\">硬件类别</th>\n");
+      out.write("            <th width=\"10%\">硬件品牌</th>\n");
       out.write("            <th width=\"20%\">更新日期</th>\n");
-      out.write("            <th colspan=\"2\" width=\"15%\">编辑</th>\n");
       out.write("        </tr>\n");
       out.write("        ");
       if (_jspx_meth_c_forEach_2(_jspx_page_context))
@@ -288,7 +290,7 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
         do {
           out.write("\n");
           out.write("                <option value=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${cate.HaCateNo}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${cate.HaCate}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write('"');
           out.write('>');
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${cate.HaCate}", java.lang.String.class, (PageContext)_jspx_page_context, null));
@@ -330,7 +332,7 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
         do {
           out.write("\n");
           out.write("                <option value=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${brand.HaBrandNo}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${brand.HaBrand}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write('"');
           out.write('>');
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${brand.HaBrand}", java.lang.String.class, (PageContext)_jspx_page_context, null));

@@ -13,18 +13,18 @@
     </form>
     <table class="table" width="80%">
         <tr style="background-color: #eee;">
-            <th width="10%">硬件编号</th>
+            <th width="12%">硬件编号</th>
             <th width="25%">硬件名称</th>
-            <th width="7%">商家编号</th>
-            <th width="12%">商家名称</th>
-            <th width="7%">当前报价</th>
-            <th width="18%">更新时间</th>
+            
+            <th width="15%">商家名称</th>
+            <th width="8%">当前报价</th>
+            <th width="20%">更新时间</th>
         </tr>
         <c:forEach var="price" items="${pageBean.data}">
             <tr>
                 <td><a href="${pageContext.request.contextPath}/BusinessServlet?flag=showHadetail&id=${price.HaNo}">${price.HaNo}</a></td>
                 <td>${price.HaName}</td>
-                <td>${price.BuNo}</td>
+                
                 <td>${price.BuName}</td>
                 <td style="color: #DC143C">${price.NowPrice}</td>
                 <td>${price.NowDate}</td>
