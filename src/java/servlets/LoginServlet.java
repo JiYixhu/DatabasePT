@@ -54,7 +54,7 @@ public class LoginServlet extends HttpServlet {
                 UserService us=new UserService();
                 if (us.checkLogin(username, password)) {
                     request.getSession().setAttribute("loginResult","ok");
-                    rd = request.getRequestDispatcher("UserServlet?flag=list");
+                    rd = request.getRequestDispatcher("UserServlet?flag=Halist");
                     rd.forward(request, response);
                     return;
                 }

@@ -3,25 +3,32 @@
 <%@include file="/business/header.jsp"%>
 <style>
     h1{
-    margin-top: 50px;
-    font-size: 30px;
-    color: #6699CC;
-    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
-}
+        margin-top: 50px;
+        font-size: 30px;
+        color: #6699CC;
+        font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+    }
     table{border-collapse: collapse;}
     table td{text-align: center;border: 3px solid #48D1CC;}
     table tr{height: 40px;}
-    input[type="submit"],input[type="reset"]
-    {display: inline-block;width: 120px;background-color:#FFA500;height: 35px;line-height: 30px;color: #fff; border-radius: 10px;}
-</style>
-<center>
-    <br><h1>添加报价</h1><!--HaNo BuNo NowPrice 时间自动填入，点击添加时需确认商家密码-->
-    <form action="${pageContext.request.contextPath}/BusinessServlet?flag=add" method="post">
-        <table width="60%">
-            <tr>
-                <td bgcolor="#AFEEEE" width="30%" >硬件编号</td>
-                <td width="70%" >
-                    <input style="width: 415px;height: 30px;" type="text" name="THaNo" placeholder="请保证编号是硬件表中存在的">
+    .anniu
+    {
+        width: 120px;
+        color: #FFFFFF;
+        height: 30px;
+        background-color:#FFA500;
+        border: none;
+        border-radius:5px;
+    }
+    </style>
+    <center>
+        <br><h1>添加报价</h1><!--HaNo BuNo NowPrice 时间自动填入，点击添加时需确认商家密码-->
+        <form action="${pageContext.request.contextPath}/BusinessServlet?flag=add" method="post">
+            <table width="60%">
+                <tr>
+                    <td bgcolor="#AFEEEE" width="30%" >硬件编号</td>
+                    <td width="70%" >
+                        <input style="width: 415px;height: 30px;" type="text" name="THaNo" placeholder="请保证编号是硬件表中存在的">
                 </td>
             </tr>
             <tr>
@@ -56,8 +63,8 @@
             </tr>
         </table>
         <br>
-        <input type="submit" value="提交">
-        <input type="reset" value="重置">
+        <input class="anniu" type="submit" value="提交">
+        <input class="anniu" type="reset" value="重置">
     </form>
 </center>
 <c:if test="${PwdResult=='no'}">

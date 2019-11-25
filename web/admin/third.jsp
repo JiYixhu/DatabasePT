@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="GB2312"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@include file="/admin/header.jsp"%>
-<link rel="stylesheet" href="admin/mycss.css"/>
+<link rel="stylesheet" href="mycss.css"/>
 <body>
 <center>
     <br><h1>类别列表</h1><br>

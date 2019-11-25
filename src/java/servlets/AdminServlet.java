@@ -5,6 +5,8 @@
  */
 package servlets;
 
+import Util.Brand;
+import Util.Category;
 import Util.PageBean;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -40,6 +42,9 @@ public class AdminServlet extends HttpServlet {
         RequestDispatcher rd = null;
         AdminService as = new AdminService();
         if ("Halist".equals(flag)) {
+            String cate = request.getParameter("selectcate");
+            String brand = request.getParameter("selectbrand");
+            String name = request.getParameter("selectname");
             String page = request.getParameter("page");
             int curPage = 0;
             if (page == null || page.length() < 1) {
@@ -47,8 +52,14 @@ public class AdminServlet extends HttpServlet {
             } else {
                 curPage = Integer.parseInt(page);
             }
-            PageBean pageBean = as.Halist(curPage);//!!!!
+            Category category = as.SearchCate();
+            request.setAttribute("category", category);//!!!!
+            Brand bbrand = as.SearchBrand();
+            request.setAttribute("bbrand", bbrand);//!!!!
+            PageBean pageBean = as.Halist(cate, brand, name, curPage);
             request.setAttribute("pageBean", pageBean);
+            request.setAttribute("parameCate", cate);
+            request.setAttribute("parameBrand", brand);
             rd = request.getRequestDispatcher("/admin/first.jsp");
             rd.forward(request, response);          
         } 
