@@ -171,13 +171,15 @@ public class DBUtil {
         return recNo;
     }
     
-    public int updateprice(String sql,String THaNo,String TBuNo,double TNowProce){
+    public int updateprice(String sql,String THaNo,String THaName,String TBuNo,String TBuName,double TNowProce){
         int recNo = 0;//表示受影响的记录行数
         pstmt=this.getPreparedStatement(sql);
         try {
             pstmt.setString(1, THaNo);
-            pstmt.setString(2, TBuNo);
-            pstmt.setDouble(3, TNowProce);
+            pstmt.setString(2, THaName);
+            pstmt.setString(3, TBuNo);
+            pstmt.setString(4, TBuName);
+            pstmt.setDouble(5, TNowProce);
             recNo = pstmt.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();

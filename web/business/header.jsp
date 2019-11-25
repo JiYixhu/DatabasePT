@@ -9,7 +9,7 @@
         <li><a href="${pageContext.request.contextPath}/login.jsp">登录页面</a></li>
         <li><a href="${pageContext.request.contextPath}/BusinessServlet?flag=Searchlist">硬件列表</a></li>
         <li><a href="${pageContext.request.contextPath}/BusinessServlet?flag=Pricelist">报价列表</a></li>
-        <li><a href="${pageContext.request.contextPath}/BusinessServlet?flag=add">添加报价</a></li>
+        <li><a href="${pageContext.request.contextPath}/business/third.jsp">添加报价</a></li>
     </ul>
 </div>
    

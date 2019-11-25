@@ -110,10 +110,12 @@ public class BusinessService {
     public int add(Map parameters) {
         int result = 0;
         String THaNo = (String) parameters.get("THaNo");
+        String THaName = (String) parameters.get("THaName");
         String TBuNo = (String) parameters.get("TBuNo");
+        String TBuName = (String) parameters.get("TBuName");
         Double TNowPrice = (Double) parameters.get("TNowPrice");
-        String sql = "insert into updateprice ()values(?,?,?)";
-        result = db.updateprice(sql,THaNo,TBuNo,TNowPrice);
+        String sql = "insert into updateprice values(?,?,?,?,?,now())";
+        result = db.updateprice(sql,THaNo,THaName,TBuNo,TBuName,TNowPrice);
         return result;
     }
 }

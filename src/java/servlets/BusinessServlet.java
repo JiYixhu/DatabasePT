@@ -75,23 +75,27 @@ public class BusinessServlet extends HttpServlet {
             rd.forward(request, response);
         } else if ("add".equals(flag)) {
             String THaNo = request.getParameter("THaNo");
+            String THaName = request.getParameter("THaName");
             String TBuNo = request.getParameter("TBuNo");
+            String TBuName = request.getParameter("TBuName");
             double TNowPrice = Double.parseDouble(request.getParameter("TNowPrice"));
             String TPwd = request.getParameter("TPwd");
             if (bs.checkLogin2(TBuNo, TPwd)) {
                 request.getSession().setAttribute("PwdResult", "ok");
                 Map paramters = new HashMap();
                 paramters.put("THaNo", THaNo);
+                paramters.put("THaName", THaName);
                 paramters.put("TBuNo", TBuNo);
+                paramters.put("TBuName", TBuName);
                 paramters.put("TNowPrice", TNowPrice);
                 int rl = bs.add(paramters);
-                String addresult = (rl > 0 ? "ok" : "no");
-                request.getSession().setAttribute("addresult",addresult);
-                rd = request.getRequestDispatcher("/business/third.jsp");
+                String result = (rl > 0 ? "添加成功！" : "添加失败！");
+                request.getSession().setAttribute("addresult",result);
+                rd = request.getRequestDispatcher("/business/result.jsp");
                 rd.forward(request, response);
                 return;
             } else {
-                request.getSession().setAttribute("PwdResult", "no");
+                request.getSession().setAttribute("PwdResult","no");
                 rd = request.getRequestDispatcher("/business/third.jsp");
                 rd.forward(request, response);
                 return;
