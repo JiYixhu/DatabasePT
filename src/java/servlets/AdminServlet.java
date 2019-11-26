@@ -64,6 +64,8 @@ public class AdminServlet extends HttpServlet {
             rd.forward(request, response);          
         } 
         else if ("Bulist".equals(flag)) {
+            String Number =request.getParameter("Number");
+            String Name =request.getParameter("Name");
             String page = request.getParameter("page");
             int curPage = 0;
             if (page == null || page.length() < 1) {
@@ -71,7 +73,7 @@ public class AdminServlet extends HttpServlet {
             } else {
                 curPage = Integer.parseInt(page);
             }
-            PageBean pageBean = as.Bulist(curPage);
+            PageBean pageBean = as.Bulist(Number,Name,curPage);
             request.setAttribute("pageBean", pageBean);
             rd = request.getRequestDispatcher("/admin/second.jsp");
             rd.forward(request, response);

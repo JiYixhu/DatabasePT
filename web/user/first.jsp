@@ -33,7 +33,7 @@
         </tr>
         <c:forEach var="hardware" items="${pageBean.data}">
             <tr>
-                <td><a href="${pageContext.request.contextPath}/BusinessServlet?flag=showHadetail&id=${hardware.HaNo}">${hardware.HaNo}</a></td>
+                <td><a href="${pageContext.request.contextPath}/UserServlet?flag=showHadetail&id=${hardware.HaNo}">${hardware.HaNo}</a></td>
                 <td>${hardware.HaName}</td>
                 <td>${hardware.HaCate}</td>
                 <td>${hardware.HaBrand}</td>

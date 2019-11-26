@@ -38,7 +38,6 @@ public class AdminService {
         return result;
     }
 
-    
     public Category SearchCate() {
         String sql = "select * from catagory";
         return db.getCategory(sql, new String[]{});
@@ -48,7 +47,7 @@ public class AdminService {
         String sql = "select * from brand";
         return db.getBrand(sql, new String[]{});
     }
-    
+
     public PageBean Halist(String cate, String brand, String name, int curPage) {
         String sql = null;
         if (cate == null || cate.equals("")) {//类别为空
@@ -88,9 +87,27 @@ public class AdminService {
         }
     }
 
-    public PageBean Bulist(int curPage) {
-        String sql = "select * from businessman";
-        return db.getPageBean(sql, new String[]{}, curPage);
+    public PageBean Bulist(String Number, String Name, int curPage) {
+        String sql = null;
+        if (Number == null) {
+            if (Name == null) {
+                sql = "select * from businessman";
+                return db.getPageBean(sql, new String[]{}, curPage);
+            } else {
+                sql = "select * from businessman where BuName like ?";
+                return db.getPageBean(sql, new String[]{"%" + Name + "%"}, curPage);
+            }
+        }
+        else{
+            if (Name == null) {
+                sql = "select * from businessman where BuNo like ?";
+                return db.getPageBean(sql, new String[]{"%" + Number + "%"}, curPage);
+            }
+            else{
+                sql = "select * from businessman where BuNo like ? and BuName like ?";
+                return db.getPageBean(sql, new String[]{"%" + Number + "%","%" + Name + "%"}, curPage);
+            }
+        }
     }
 
     public PageBean Calist(int curPage) {

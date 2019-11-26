@@ -7,9 +7,9 @@
 <div class="box" align="center">
     <ul>
         <li><a href="${pageContext.request.contextPath}/login.jsp">登录页面</a></li>
-        <li><a href="${pageContext.request.contextPath}/UserServlet?flag=Searchlist">硬件列表</a></li>
+        <li><a href="${pageContext.request.contextPath}/UserServlet?flag=Halist">硬件列表</a></li>
         <li><a href="${pageContext.request.contextPath}/UserServlet?flag=Pricelist">报价列表</a></li>
-        <li><a href="${pageContext.request.contextPath}/UserServlet/flag=Bulist">商家列表</a></li>
+        <li><a href="${pageContext.request.contextPath}/UserServlet?flag=Bulist">商家列表</a></li>
     </ul>
 </div>
    

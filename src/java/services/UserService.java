@@ -26,7 +26,7 @@ public class UserService {
         String UsPwd = (String) parameters.get("pwd2");
         String UsTel = (String) parameters.get("tel");
         String sql = "insert into usertable values(?,?,?)";
-        result = db.update(sql, new String[]{ UsID, UsPwd, UsTel});
+        result = db.update(sql, new String[]{UsID, UsPwd, UsTel});
         return result;
     }
 
@@ -35,7 +35,7 @@ public class UserService {
         return db.getMap(sql, new String[]{HaNo});
     }
 
-     public Category SearchCate() {
+    public Category SearchCate() {
         String sql = "select * from catagory";
         return db.getCategory(sql, new String[]{});
     }
@@ -82,5 +82,53 @@ public class UserService {
                 return db.getPageBean(sql, new String[]{cate, brand, "%" + name + "%"}, curPage);
             }
         }
+    }
+
+    public PageBean Pricelist(String Name1, String Name2, int curPage) {
+        String sql = null;
+        if (Name1 == null || Name1.equals("")) {
+            if (Name2 == null || Name2.equals("")) {
+                sql = "select * from updateprice order by NowDate desc";
+                return db.getPageBean(sql, new String[]{}, curPage);
+            } else {
+                sql = "select * from updateprice where BuName like ? order by NowDate desc";
+                return db.getPageBean(sql, new String[]{"%" + Name2 + "%"}, curPage);
+            }
+        } else {
+            if (Name2 == null || Name2.equals("")) {
+                sql = "select * from updateprice where HaName like ? order by NowDate desc";
+                return db.getPageBean(sql, new String[]{"%" + Name1 + "%"}, curPage);
+            } else {
+                sql = "select * from updateprice where HaName like ? and BuName like ? order by NowDate desc";
+                return db.getPageBean(sql, new String[]{"%" + Name1 + "%", "%" + Name2 + "%"}, curPage);
+            }
+        }
+    }
+    public PageBean Bulist(String Number, String Name, int curPage) {
+        String sql = null;
+        if (Number == null) {
+            if (Name == null) {
+                sql = "select * from businessman";
+                return db.getPageBean(sql, new String[]{}, curPage);
+            } else {
+                sql = "select * from businessman where BuName like ?";
+                return db.getPageBean(sql, new String[]{"%" + Name + "%"}, curPage);
+            }
+        }
+        else{
+            if (Name == null) {
+                sql = "select * from businessman where BuNo like ?";
+                return db.getPageBean(sql, new String[]{"%" + Number + "%"}, curPage);
+            }
+            else{
+                sql = "select * from businessman where BuNo like ? and BuName like ?";
+                return db.getPageBean(sql, new String[]{"%" + Number + "%","%" + Name + "%"}, curPage);
+            }
+        }
+    }
+
+    public PageBean Weeklist(int curPage, String HaNo) {
+        String sql = "select * from updateprice where HaNo= ? and DATEDIFF(NowDate,now())<=0 AND DATEDIFF(NowDate,now())>-7 order by NowDate desc";
+        return db.getPageBean(sql, new String[]{HaNo}, curPage);
     }
 }
