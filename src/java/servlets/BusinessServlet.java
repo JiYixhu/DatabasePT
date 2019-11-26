@@ -74,13 +74,17 @@ public class BusinessServlet extends HttpServlet {
             rd = request.getRequestDispatcher("/business/second.jsp");
             rd.forward(request, response);
         } else if ("add".equals(flag)) {
+            String addresult;
             String THaNo = request.getParameter("THaNo");
             String THaName = request.getParameter("THaName");
             String TBuNo = request.getParameter("TBuNo");
             String TBuName = request.getParameter("TBuName");
-            double TNowPrice = Double.parseDouble(request.getParameter("TNowPrice"));
+            String NowPrice = request.getParameter("TNowPrice");
             String TPwd = request.getParameter("TPwd");
-            if (bs.checkLogin2(TBuNo, TPwd)) {
+            if ("".equals(THaNo) || "".equals(THaName) || "".equals(TBuNo) || "".equals(TBuName) || "".equals(NowPrice)||"".equals(TPwd)) {
+                addresult = "isnull";
+            } else if (bs.checkLogin2(TBuNo, TPwd)) {
+                double TNowPrice = Double.parseDouble(NowPrice);
                 request.getSession().setAttribute("PwdResult", "ok");
                 Map paramters = new HashMap();
                 paramters.put("THaNo", THaNo);
@@ -89,17 +93,13 @@ public class BusinessServlet extends HttpServlet {
                 paramters.put("TBuName", TBuName);
                 paramters.put("TNowPrice", TNowPrice);
                 int rl = bs.add(paramters);
-                String result = (rl > 0 ? "添加成功！" : "添加失败！");
-                request.getSession().setAttribute("addresult",result);
-                rd = request.getRequestDispatcher("/business/result.jsp");
-                rd.forward(request, response);
-                return;
+                addresult = (rl > 0 ? "添加成功" : "添加失败");
             } else {
-                request.getSession().setAttribute("PwdResult","no");
-                rd = request.getRequestDispatcher("/business/third.jsp");
-                rd.forward(request, response);
-                return;
+                addresult = "密码错误";
             }
+            request.setAttribute("addresult", addresult);
+            rd = request.getRequestDispatcher("/business/third.jsp");
+            rd.forward(request, response);
         }
     }
 

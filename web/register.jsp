@@ -13,8 +13,6 @@
     }
     h1{
         color:  #FFFFFF;
-        /*color: transparent;
-        background-color :#0066FF;*/
         text-shadow : rgba(255,255,255,0.5) 0 5px 5px, rgba(255,255,255,0.2) 1px 3px 3px;
         -webkit-background-clip : text;
         margin: 30px auto 0;
@@ -73,7 +71,7 @@
 </body>
 
 <c:if test="${result=='isnull'}">
-    <script>window.alert("有为空的项，请填写完毕！");</script>
+    <script>window.alert("各项均不能为空！");</script>
     <%session.setAttribute("result", null);%>
 </c:if>
 <c:if test="${result=='no'}">
@@ -85,9 +83,9 @@
     <%session.setAttribute("result", null);%>
 </c:if>
 <c:if test="${result=='yes'}">
-    <script>window.alert("注册成功!3秒后返回登录界面！");</script>
+    <script>window.alert("注册成功!点击立即返回登录界面！");</script>
     <%
         session.setAttribute("result", null);
-        response.setHeader("refresh", "3;URL=login.jsp");
+        response.setHeader("refresh", "1;URL=login.jsp");
     %>
 </c:if>

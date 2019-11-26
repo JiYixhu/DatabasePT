@@ -1,5 +1,7 @@
 package servlets;
 
+import Util.Brand;
+import Util.Category;
 import Util.PageBean;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -29,21 +31,29 @@ public class UserServlet extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("GB2312");
         response.setCharacterEncoding("GB2312");
-        HttpSession session = request.getSession();
         String flag = request.getParameter("flag");
         RequestDispatcher rd = null;
         UserService us = new UserService();
-        if ("listAll".equals(flag)) {
+        if ("Halist".equals(flag)) {
             String page = request.getParameter("page");
+            String cate = request.getParameter("selectcate");
+            String brand = request.getParameter("selectbrand");
+            String name = request.getParameter("selectname");
             int curPage = 0;
             if (page == null || page.length() < 1) {
                 curPage = 1;
             } else {
                 curPage = Integer.parseInt(page);
             }
-            //PageBean pageBean = us.listAll(curPage);
-            //session.setAttribute("pageBean", pageBean);
-            rd = request.getRequestDispatcher("/listAll.jsp");
+            Category category = us.SearchCate();
+            request.setAttribute("category", category);//!!!!
+            Brand bbrand = us.SearchBrand();
+            request.setAttribute("bbrand", bbrand);//!!!!
+            PageBean pageBean = us.Searchlist(cate, brand, name, curPage);
+            request.setAttribute("pageBean", pageBean);
+            request.setAttribute("parameCate", cate);
+            request.setAttribute("parameBrand", brand);
+            rd = request.getRequestDispatcher("/user/first.jsp");
             rd.forward(request, response);
         } else if ("register".equals(flag)) {
             String username = request.getParameter("username");
@@ -74,37 +84,7 @@ public class UserServlet extends HttpServlet {
             request.setAttribute("file", file);
             rd = request.getRequestDispatcher("/showHadetail.jsp");
             rd.forward(request, response);
-        } else if ("sort".equals(flag)) {
-            String type = request.getParameter("type");
-            response.getWriter().print(type);
-            String page = request.getParameter("page");
-            int curPage = 0;
-            if (page == null || page.length() < 1) {
-                curPage = 1;
-            } else {
-                curPage = Integer.parseInt(page);
-            }
-            //PageBean pageBean = us.listSort(type, curPage);
-            //request.setAttribute("pageBean", pageBean);
-            request.setAttribute("parameType", type);
-            rd = request.getRequestDispatcher("/sortList.jsp");
-            rd.forward(request, response);
-        } else if ("search".equals(flag)) {
-            String type = request.getParameter("type");
-            String name = request.getParameter("name");
-            String page = request.getParameter("page");
-            int curPage = 0;
-            if (page == null || page.length() < 1) {
-                curPage = 1;
-            } else {
-                curPage = Integer.parseInt(page);
-            }
-            // PageBean pageBean = us.search(type,name,curPage);
-            //request.setAttribute("pageBean", pageBean);
-            request.setAttribute("parameType", type);
-            rd = request.getRequestDispatcher("/searchList.jsp");
-            rd.forward(request, response);
-        }
+        } 
     }
 
     @Override
