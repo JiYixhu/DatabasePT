@@ -25,7 +25,14 @@
                 <td>${price.NowDate}</td>
             </tr>
         </c:forEach>
-    </table>
+    </table><br>
+    <c:set var="sum" value="0"/>
+    <c:set var="cnt" value="0"/>
+    <c:forEach items="${pageBean.data}" var="p">
+        <c:set var="sum" value="${sum+p.NowPrice}"/>
+        <c:set var="cnt" value="${cnt+1}"/>
+    </c:forEach>
+    <table><tr><td style="font-size: 20px; color: red;">近七天平均价格为：${sum/cnt}</td></tr></table>
     <br>
     <%@include file="/footer.jsp"%>
 </center>

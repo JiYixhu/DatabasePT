@@ -97,15 +97,13 @@ public class AdminService {
                 sql = "select * from businessman where BuName like ?";
                 return db.getPageBean(sql, new String[]{"%" + Name + "%"}, curPage);
             }
-        }
-        else{
+        } else {
             if (Name == null) {
                 sql = "select * from businessman where BuNo like ?";
                 return db.getPageBean(sql, new String[]{"%" + Number + "%"}, curPage);
-            }
-            else{
+            } else {
                 sql = "select * from businessman where BuNo like ? and BuName like ?";
-                return db.getPageBean(sql, new String[]{"%" + Number + "%","%" + Name + "%"}, curPage);
+                return db.getPageBean(sql, new String[]{"%" + Number + "%", "%" + Name + "%"}, curPage);
             }
         }
     }
@@ -148,12 +146,6 @@ public class AdminService {
         return db.update(sql, new String[]{name, type, description, id});
     }
 
-    public int deleteHa(Map parameters) {
-        String HaNo = (String) parameters.get("HaNo");
-        String sql = "delete from hardware where HaNo = ?";
-        return db.update(sql, new String[]{HaNo});
-    }
-
     public int addBrand(Map parameters) {
         String HaBrandNo = (String) parameters.get("HaBrandNo");
         String HaBrand = (String) parameters.get("HaBrand");
@@ -168,15 +160,27 @@ public class AdminService {
         return db.update(sql, new String[]{HaCateNo, HaCate});
     }
 
-    public int deleteBrand(Map parameters) {
-        String HaBrandNo = (String) parameters.get("HaBrandNo");
-        String sql = "delete from brand where HaBrandNo = ?";
-        return db.update(sql, new String[]{HaBrandNo});
+    public int deleteHa(Map parameters) {
+        String HaNo = (String) parameters.get("HaNo");
+        String sql = "delete from hardware where HaNo = ?";
+        return db.update(sql, new String[]{HaNo});
     }
 
-    public int deleteCate(Map parameters) {
+    public int deleteBu(Map parameters) {
+        String BuNo = (String) parameters.get("BuNo");
+        String sql = "delete from businessman where BuNo = ?";
+        return db.update(sql, new String[]{BuNo});
+    }
+
+    public int deleteCa(Map parameters) {
         String HaCateNo = (String) parameters.get("HaCateNo");
         String sql = "delete from catagory where HaCateNo = ?";
         return db.update(sql, new String[]{HaCateNo});
+    }
+
+    public int deleteBr(Map parameters) {
+        String HaBrandNo = (String) parameters.get("HaBrandNo");
+        String sql = "delete from brand where HaBrandNo = ?";
+        return db.update(sql, new String[]{HaBrandNo});
     }
 }

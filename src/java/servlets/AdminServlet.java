@@ -163,23 +163,47 @@ public class AdminServlet extends HttpServlet {
             request.setAttribute("parameType", type);
             rd = request.getRequestDispatcher("/admin/result.jsp");
             rd.forward(request, response);
-        } else if ("delete".equals(flag)) {
-            String id = request.getParameter("id");
+        } else if ("deleteHa".equals(flag)) {
+            String HaNo = request.getParameter("HaNo");
             Map paramters = new HashMap();
-            paramters.put("id", id);
+            paramters.put("HaNo", HaNo);
             int rl = as.deleteHa(paramters);
             String result = (rl > 0 ? "删除成功" : "删除失败");
             request.setAttribute("result", result);
-            rd = request.getRequestDispatcher("/admin/result.jsp");
+            rd = request.getRequestDispatcher("/admin/first.jsp");
+            rd.forward(request, response);
+        }
+        else if ("deleteBu".equals(flag)) {
+            String BuNo = request.getParameter("BuNo");
+            Map paramters = new HashMap();
+            paramters.put("BuNo", BuNo);
+            int rl = as.deleteBu(paramters);
+            String result = (rl > 0 ? "删除成功" : "删除失败");
+            request.setAttribute("result", result);
+            rd = request.getRequestDispatcher("/admin/second.jsp");
+            rd.forward(request, response);
+        }
+        else if ("deleteCa".equals(flag)) {
+            String HaCateNo = request.getParameter("HaCateNo");
+            Map paramters = new HashMap();
+            paramters.put("HaCateNo", HaCateNo);
+            int rl = as.deleteCa(paramters);
+            String result = (rl > 0 ? "删除成功" : "删除失败");
+            request.setAttribute("result", result);
+            rd = request.getRequestDispatcher("/admin/third.jsp");
+            rd.forward(request, response);
+        }
+        else if ("deleteBr".equals(flag)) {
+            String HaCateNo = request.getParameter("HaCateNo");
+            Map paramters = new HashMap();
+            paramters.put("HaCateNo", HaCateNo);
+            int rl = as.deleteBr(paramters);
+            String result = (rl > 0 ? "删除成功" : "删除失败");
+            request.setAttribute("result", result);
+            rd = request.getRequestDispatcher("/admin/forth.jsp");
             rd.forward(request, response);
         }
     }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";

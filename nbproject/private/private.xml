@@ -5,16 +5,19 @@
         <group>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/admin/addBu.jsp</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/admin/showHadetail.jsp</file>
-            <file>file:/D:/码农进阶路/数据库实训/DatabasePT/src/java/services/UserService.java</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/admin/third.jsp</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/src/java/services/BusinessService.java</file>
+            <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/admin/deleteHa.jsp</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/src/java/servlets/BusinessServlet.java</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/admin/first.jsp</file>
+            <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/admin/deleteBu.jsp</file>
+            <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/admin/deleteCa.jsp</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/mysql.sql</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/admin/header.jsp</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/src/java/services/AdminService.java</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/admin/PriceList.jsp</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/src/java/Util/DBUtil.java</file>
+            <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/mycss.css</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/business/second.jsp</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/user/second.jsp</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/business/showHadetail.jsp</file>
@@ -27,10 +30,12 @@
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/admin/second.jsp</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/src/java/servlets/UserServlet.java</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/register.jsp</file>
+            <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/admin/forth.jsp</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/src/java/servlets/LoginServlet.java</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/user/showHadetail.jsp</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/src/java/servlets/AdminServlet.java</file>
             <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/business/third.jsp</file>
+            <file>file:/D:/码农进阶路/数据库实训/DatabasePT/web/admin/deleteBr.jsp</file>
         </group>
     </open-files>
 </project-private>

@@ -1,0 +1,16 @@
+SMAP
+deleteCa_jsp.java
+JSP
+*S JSP
+*F
++ 0 deleteCa.jsp
+admin/deleteCa.jsp
+*L
+1:44
+3,3:46
+5,14:49
+19,3:63,3
+22:72
+23:73,3
+24,3:76
+*E

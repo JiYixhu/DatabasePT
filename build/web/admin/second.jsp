@@ -31,9 +31,9 @@
                         <input type="hidden" name="fileName" value="${file.fileName}">
                         <input class="updateBtn" type="submit" value="ÐÞ¸Ä">
                     </form></td>
-                <td><form action="${pageContext.request.contextPath}/admin/delete.jsp" >
-                        <input type="hidden" name="id" value="${file.id}">
-                        <input type="hidden" name="fileName" value="${file.fileName}">
+                <td><form action="${pageContext.request.contextPath}/admin/deleteBu.jsp" >
+                        <input type="hidden" name="BuNo" value="${businessman.BuNo}">
+                        <input type="hidden" name="BuName" value="${businessman.BuName}">
                         <input class="deleteBtn" type="submit" value="É¾³ý">
                     </form></td>
             </tr>
@@ -42,4 +42,12 @@
     <br>
     <%@include file="/footer.jsp"%>
 </center>
+<c:if test="${result=='É¾³ý³É¹¦'}">
+    <script>window.alert("É¾³ý³É¹¦£¡");</script>
+    <%session.setAttribute("result", null);%>
+</c:if>
+     <c:if test="${result=='É¾³ýÊ§°Ü'}">
+    <script>window.alert("É¾³ýÊ§°Ü£¡");</script>
+    <%session.setAttribute("result", null);%>
+</c:if>
 </body>

@@ -30,7 +30,7 @@
         width:100%;
         background:#66CCFF;
         position: fixed; /*固定在顶部*/
-        top: 67px;/*离顶部的距离为0*/
+        top: 67px;/*离顶部的距离为*/
     }
     .box ul{
         /* 清除ul标签的默认样式 */

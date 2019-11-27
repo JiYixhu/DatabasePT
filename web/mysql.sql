@@ -38,7 +38,7 @@ create table hardware
     HaPrice Double,
     HaPara varchar(100),
     HaPic varchar(100),
-HaDate Date,
+    HaDate DateTime,
 foreign key(HaCate)references catagory (HaCate),
 foreign key(HaBrand)references brand (HaBrand)
 );
@@ -50,11 +50,21 @@ CREATE TABLE updateprice
   BuNo CHAR(4) NOT NULL,
   BuName VARCHAR(30) NOT NULL,
   NowPrice DOUBLE,
-  NowDate Date,
+  NowDate DateTime,
   FOREIGN KEY(HaNo)REFERENCES hardware (HaNo),
   FOREIGN KEY(BuNo)REFERENCES businessman (BuNo), 
-  PRIMARY KEY(HaNo,BuNo)
+  PRIMARY KEY(HaNo,BuNo,NowDate)
 );
+
+alter table hardware drop foreign key hardware_ibfk_1;
+alter table hardware drop foreign key hardware_ibfk_2;
+alter table hardware add constraint hardware_ibfk_1 foreign key (HaCate) references catagory (HaCate) on delete cascade on update cascade;
+alter table hardware add constraint hardware_ibfk_2 foreign key (HaBrand) references brand (HaBrand) on delete cascade on update cascade;
+
+alter table updateprice drop foreign key updateprice_ibfk_1;
+alter table updateprice drop foreign key updateprice_ibfk_2;
+alter table updateprice add constraint updateprice_ibfk_1 foreign key (HaNo) references hardware (HaNo) on delete cascade on update cascade;
+alter table updateprice add constraint updateprice_ibfk_2 foreign key (BuNo) references businessman (BuNo) on delete cascade on update cascade;
 
 INSERT INTO manager VALUES('0001','admin1','123456');
 

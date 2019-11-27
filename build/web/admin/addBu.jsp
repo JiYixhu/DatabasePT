@@ -1,8 +1,3 @@
-<%-- 
-    Document   : addBu
-    Created on : 2019-10-21, 19:42:44
-    Author     : 季忆
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
