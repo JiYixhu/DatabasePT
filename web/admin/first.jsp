@@ -40,9 +40,9 @@
                 <td>${hardware.HaCate}</td>
                 <td>${hardware.HaBrand}</td>
                 <td>${hardware.HaDate}</td>
-                <td><form action="${pageContext.request.contextPath}/admin/update.jsp" >
-                        <input type="hidden" name="id" value="${hardware.HaNo}">
-                        <input type="hidden" name="fileName" value="${hardware.HaName}">
+                <td><form action="${pageContext.request.contextPath}/admin/updateHa.jsp" >
+                        <input type="hidden" name="HaNo" value="${hardware.HaNo}">
+                        <input type="hidden" name="HaName" value="${hardware.HaName}">
                         <input class="updateBtn" type="submit" value="ĞŞ¸Ä">
                     </form></td>
                 <td><form action="${pageContext.request.contextPath}/admin/deleteHa.jsp" >

@@ -47,7 +47,7 @@ public final class headertest_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <b>|</b>\n");
       out.write("    <strong style=\" font-size: 20px\">专业 全面</strong>\n");
       out.write("</div>\n");
-      out.write("<div class=\"top\" align=\"center\">\n");
+      out.write("<div class=\"box\" align=\"center\">\n");
       out.write("    <ul>\n");
       out.write("        <li><a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
@@ -141,9 +141,15 @@ public final class headertest_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        /* 鼠标选中时背景变为黑色 */\n");
       out.write("        background-color: #FFCC99;\n");
       out.write("    }\n");
-      out.write("    .logo{width: 340px;height: 240px;margin: 50px auto;padding: auto;\n");
-      out.write("           align-items: center;border: 4px solid #3399ff;border-radius: 10px;\n");
-      out.write("           background-color:rgba(238,238,238,0.5);\n");
+      out.write("    .logo{color:  #FFFFFF;\n");
+      out.write("        /*color: transparent;\n");
+      out.write("        background-color :#0066FF;*/\n");
+      out.write("        text-shadow : rgba(255,255,255,0.5) 0 5px 5px, rgba(255,255,255,0.2) 1px 3px 3px;\n");
+      out.write("        -webkit-background-clip : text;\n");
+      out.write("        margin: 20px auto 0;\n");
+      out.write("        font-size: 30px;\n");
+      out.write("        letter-spacing: 2pt;\n");
+      out.write("        font-family: SimHei;\n");
       out.write("    } \n");
       out.write("    .cap{\n");
       out.write("        margin-top:  0px;\n");

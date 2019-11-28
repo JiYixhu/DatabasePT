@@ -90,7 +90,7 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("/BusinessServlet?flag=Pricelist\">报价列表</a></li>\n");
       out.write("        <li><a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/BusinessServlet?flag=Pricelist\">添加报价</a></li>\n");
+      out.write("/business/third.jsp\">添加报价</a></li>\n");
       out.write("    </ul>\n");
       out.write("</div>\n");
       out.write("   \n");
@@ -142,7 +142,7 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    }\n");
       out.write("</style>\n");
       out.write("\n");
-      out.write("<link rel=\"stylesheet\" href=\"business/mycss.css\"/>\n");
+      out.write("<link rel=\"stylesheet\" href=\"mycss.css\"/>\n");
       out.write("<body>\n");
       out.write("<center>\n");
       out.write("    <br><h1>硬件列表</h1><br>\n");

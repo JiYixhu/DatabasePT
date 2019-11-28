@@ -4,7 +4,7 @@
     <b>|</b>
     <strong style=" font-size: 20px">专业 全面</strong>
 </div>
-<div class="top" align="center">
+<div class="box" align="center">
     <ul>
         <li><a href="${pageContext.request.contextPath}/index.jsp">登录页面</a></li>
         <li><a href="${pageContext.request.contextPath}/UserServlet?flag=top">下载排行</a></li>
@@ -69,7 +69,6 @@
         margin: 0;            
         padding: 0;
         overflow: hidden;
-
     }
     .top li {    
         float:left; /* 使li内容横向浮动，即横向排列  */

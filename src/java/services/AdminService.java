@@ -183,4 +183,58 @@ public class AdminService {
         String sql = "delete from brand where HaBrandNo = ?";
         return db.update(sql, new String[]{HaBrandNo});
     }
+
+    public int updateBu(Map parameters) {
+        String BuName = (String) parameters.get("BuName");
+        String BuAddress = (String) parameters.get("BuAddress");
+        String BuTel = (String) parameters.get("BuTel");
+        String BuNo = (String) parameters.get("BuNo");
+        String sql = "update businessman set BuName = ?, BuAdd = ?, BuTel = ? where BuNo = ?";
+        return db.update(sql, new String[]{BuName, BuAddress, BuTel, BuNo});
+    }
+
+    public int updateCa(Map parameters) {
+        String HaCateNo = (String) parameters.get("HaCateNo");
+        String HaCate = (String) parameters.get("HaCate");
+        String sql = "update catagory set HaCate = ? where HaCateNo = ?";
+        return db.update(sql, new String[]{HaCate, HaCateNo});
+    }
+
+    public int updateBr(Map parameters) {
+        String HaBrandNo = (String) parameters.get("HaBrandNo");
+        String HaBrand = (String) parameters.get("HaBrand");
+        String sql = "update brand set HaBrand = ? where HaBrandNo = ?";
+        return db.update(sql, new String[]{HaBrand, HaBrandNo});
+    }
+
+    public int addBu(Map parameters) {
+        int result = 0;
+        String BuNo = (String) parameters.get("BuNo");
+        String BuID = (String) parameters.get("BuID");
+        String BuPwd1 = (String) parameters.get("BuPwd1");
+        String BuName = (String) parameters.get("BuName");
+        String BuAdd = (String) parameters.get("BuAdd");
+        String BuTel = (String) parameters.get("BuTel");
+        String sql = "insert into businessman values(?,?,?,?,?,?)";
+        result = db.update(sql, new String[]{BuNo, BuID, BuPwd1, BuName, BuAdd, BuTel});
+        return result;
+    }
+
+    public int addCa(Map parameters) {
+        int result = 0;
+        String HaCateNo = (String) parameters.get("HaCateNo");
+        String HaCate = (String) parameters.get("HaCate");
+        String sql = "insert into catagory values(?,?)";
+        result = db.update(sql, new String[]{HaCateNo, HaCate});
+        return result;
+    }
+    
+    public int addBr(Map parameters) {
+        int result = 0;
+        String HaBrandNo = (String) parameters.get("HaBrandNo");
+        String HaBrand = (String) parameters.get("HaBrand");
+        String sql = "insert into brand values(?,?)";
+        result = db.update(sql, new String[]{HaBrandNo, HaBrand});
+        return result;
+    }
 }

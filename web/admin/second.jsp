@@ -26,9 +26,9 @@
                 <td>${businessman.BuName}</td>
                 <td>${businessman.BuAdd}</td>
                 <td>${businessman.BuTel}</td>
-                <td><form action="${pageContext.request.contextPath}/admin/update.jsp" >
-                        <input type="hidden" name="id" value="${file.id}">
-                        <input type="hidden" name="fileName" value="${file.fileName}">
+                <td><form action="${pageContext.request.contextPath}/admin/updateBu.jsp" >
+                        <input type="hidden" name="BuNo" value="${businessman.BuNo}">
+                        <input type="hidden" name="BuName" value="${businessman.BuName}">
                         <input class="updateBtn" type="submit" value="ÐÞ¸Ä">
                     </form></td>
                 <td><form action="${pageContext.request.contextPath}/admin/deleteBu.jsp" >
@@ -48,6 +48,14 @@
 </c:if>
      <c:if test="${result=='É¾³ýÊ§°Ü'}">
     <script>window.alert("É¾³ýÊ§°Ü£¡");</script>
+    <%session.setAttribute("result", null);%>
+</c:if>
+    <c:if test="${result=='ÐÞ¸Ä³É¹¦'}">
+    <script>window.alert("ÐÞ¸Ä³É¹¦£¡");</script>
+    <%session.setAttribute("result", null);%>
+</c:if>
+     <c:if test="${result=='ÐÞ¸ÄÊ§°Ü'}">
+    <script>window.alert("ÐÞ¸ÄÊ§°Ü£¡");</script>
     <%session.setAttribute("result", null);%>
 </c:if>
 </body>

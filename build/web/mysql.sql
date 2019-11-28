@@ -66,6 +66,8 @@ alter table updateprice drop foreign key updateprice_ibfk_2;
 alter table updateprice add constraint updateprice_ibfk_1 foreign key (HaNo) references hardware (HaNo) on delete cascade on update cascade;
 alter table updateprice add constraint updateprice_ibfk_2 foreign key (BuNo) references businessman (BuNo) on delete cascade on update cascade;
 
+ALTER TABLE businessman ADD UNIQUE (BuID);
+
 INSERT INTO manager VALUES('0001','admin1','123456');
 
 INSERT INTO businessman VALUES('0001','bs1','123456','数码之家','金牛区金周路111号','13183623686');

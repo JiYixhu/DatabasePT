@@ -37,12 +37,12 @@
             <td width="20%" >${hardware.HaCate}</td>
             <td bgcolor="#AFEEEE" width="15%" >硬件品牌</td>
             <td width="20%" >${hardware.HaBrand}</td>
-            <td width="20%" rowspan="2"><img width="400" height="280" src = "${hardware.HaPic}"/></td>
+            <td width="20%" rowspan="2"><img width="300" height="210" src = "${hardware.HaPic}"/></td>
         </tr>
         <tr>
             <td bgcolor="#AFEEEE" width="15%" >最新硬件价格</td>
             <td width="30%" >${hardware.HaPrice}</td>
-            <td bgcolor="#AFEEEE" width="15%" >硬件更新日期</td>
+            <td bgcolor="#AFEEEE" width="15%" >价格更新日期</td>
             <td width="30%" >${hardware.HaDate}</td>
         </tr>
         <tr>
