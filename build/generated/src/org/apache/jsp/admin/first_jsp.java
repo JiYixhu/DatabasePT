@@ -157,22 +157,28 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_meth_c_set_0(_jspx_page_context))
         return;
       out.write("\n");
-      out.write("    \n");
       out.write("    <form action=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("/admin/addHa.jsp\" >\n");
-      out.write("                        <input type=\"hidden\" name=\"HaNo\" value=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${hardware.HaNo}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("        <input type=\"hidden\" name=\"category\" value=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${category.data}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\">\n");
-      out.write("                        <input type=\"hidden\" name=\"HaName\" value=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${hardware.HaName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("        <input type=\"hidden\" name=\"bbrand\" value=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${bbrand.data}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\">\n");
-      out.write("                        <input class=\"tianjia\" type=\"submit\" value=\"硬件添加\">\n");
-      out.write("                    </form>\n");
-      out.write("    <!--<a  class=\"tianjia\" href=\"");
+      out.write("        <input style=\"display: block;\n");
+      out.write("               width: 120px;\n");
+      out.write("               background-color: #FFA500;\n");
+      out.write("               height: 30px;\n");
+      out.write("               line-height: 30px;\n");
+      out.write("               color: #fff;\n");
+      out.write("               margin-bottom: 5px;\n");
+      out.write("               border-radius: 4px;\" type=\"submit\" value=\"硬件添加\">\n");
+      out.write("    </form>\n");
+      out.write("<!--<a  class=\"tianjia\" href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("/admin/addHa.jsp\">硬件添加</a>-->\n");
-      out.write("    \n");
+      out.write("\n");
       out.write("    <form action=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${url}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\" method=\"post\" style=\"margin-bottom: 10px;\">\n");
@@ -287,8 +293,7 @@ session.setAttribute("result", null);
         return;
       }
       _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
-      out.write("\n");
-      out.write("     ");
+      out.write('\n');
       //  c:if
       org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_1 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
       _jspx_th_c_if_1.setPageContext(_jspx_page_context);
@@ -312,8 +317,7 @@ session.setAttribute("result", null);
         return;
       }
       _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_1);
-      out.write("\n");
-      out.write("    ");
+      out.write('\n');
       //  c:if
       org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_2 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
       _jspx_th_c_if_2.setPageContext(_jspx_page_context);

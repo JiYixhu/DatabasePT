@@ -22,21 +22,6 @@ public class AdminService {
             return true;
         }
     }
-//添加硬件信息
-
-    public int add(Map file, Map parameters) {
-        int result = 0;
-        String HaNo = (String) parameters.get("HaNo");
-        String HaName = (String) parameters.get("HaName");
-        String HaCate = (String) parameters.get("HaCate");
-        String HaBrand = (String) parameters.get("HaBrand");
-        String HaPrice = (String) parameters.get("HaPrice");
-        String HaPara = (String) parameters.get("HaPara");
-        String HaPic = (String) file.get("HaPic");
-        String sql = "insert into hardware values(?,?,?,?,?,?,?,now())";
-        result = db.update(sql, new String[]{HaNo, HaName, HaCate, HaBrand, HaPrice, HaPara, HaPic});
-        return result;
-    }
 
     public Category SearchCate() {
         String sql = "select * from catagory";
@@ -179,7 +164,7 @@ public class AdminService {
         String HaName = (String) parameters.get("HaName");
         String HaPara = (String) parameters.get("HaPara");
         String HaNo = (String) parameters.get("HaNo");
-        String sql = "update hardware set HaName = ?,HaPara = ? where HaNo = ?";
+        String sql = "update hardware set HaName = ?,HaPara = ?,HaDate= now() where HaNo = ?";
         return db.update(sql, new String[]{HaName,HaPara, HaNo});
     }
 
@@ -245,7 +230,7 @@ public class AdminService {
         String HaBrand = (String) parameters.get("HaBrand");
         String HaPara = (String) parameters.get("HaPara");
         String HaPic = (String) parameters.get("HaPic");
-        String sql = "insert into hardware (HaNo,HaName,HaCate,HaBrand,HaPara,HaPic) values(?,?,?,?,?,?)";
+        String sql = "insert into hardware (HaNo,HaName,HaCate,HaBrand,HaPara,HaPic,HaDate) values(?,?,?,?,?,?,now())";
         result = db.update(sql, new String[]{HaNo, HaName, HaCate, HaBrand, HaPara, HaPic});
         return result;
     }

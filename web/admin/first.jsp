@@ -6,7 +6,6 @@
 <center>
     <br><h1>Ó²¼þÁÐ±í</h1><br>
     <c:set var="url" value="${pageContext.request.contextPath}/AdminServlet?flag=Halist" />
-
     <form action="${pageContext.request.contextPath}/admin/addHa.jsp" >
         <input type="hidden" name="category" value="${category.data}">
         <input type="hidden" name="bbrand" value="${bbrand.data}">

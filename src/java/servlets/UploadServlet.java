@@ -100,7 +100,7 @@ public class UploadServlet extends HttpServlet {
                             realname = realname.substring(realname.lastIndexOf("\\") + 1);
                         }
                         System.out.println("fileName" + "->" + realname);
-                        path = "D:\\码农进阶路\\数据库实训\\DatabasePT\\web\\img";
+                        path = "D:\\码农进阶路\\数据库实训\\DatabasePT\\web\\img";//绝对路径
                         System.out.println(path);
                         item.write(new File(path, realname)); //把上传的文件保存到某个文件中
                     }
@@ -116,7 +116,7 @@ public class UploadServlet extends HttpServlet {
             parameters.put("HaCate", HaCate);
             parameters.put("HaBrand", HaBrand);
             parameters.put("HaPara", HaPara);
-            String Hapic = "/DatabasePT/img/"+ realname;
+            String Hapic = "/DatabasePT/img/"+ realname;//存入数据库的应是相对路径
             parameters.put("HaPic", Hapic);
             int rl = as.addHa(parameters);
             String result = (rl > 0 ? "添加成功" : "添加失败");

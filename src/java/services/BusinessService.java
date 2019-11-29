@@ -107,6 +107,7 @@ public class BusinessService {
         String sql = "select * from hardware where HaNo = ?";
         return db.getMap(sql, new String[]{HaNo});
     }
+    
     public int add(Map parameters) {
         int result = 0;
         String THaNo = (String) parameters.get("THaNo");

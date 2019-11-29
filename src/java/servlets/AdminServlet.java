@@ -119,28 +119,6 @@ public class AdminServlet extends HttpServlet {
             request.setAttribute("pageBean", pageBean);
             rd = request.getRequestDispatcher("/admin/PriceList.jsp");
             rd.forward(request, response);
-        } else if ("add".equals(flag)) {
-            String name = request.getParameter("name");
-            String type = request.getParameter("type");
-            String description = request.getParameter("description");
-            String fileName = request.getParameter("fileName");
-            Map parameters = new HashMap();
-            parameters.put("name", name);
-            parameters.put("type", type);
-            parameters.put("description", description);
-            //String str = fileName.substring(fileName.lastIndexOf("."), fileName.length());
-            Map file = new HashMap();
-            //String s = "" + Math.random();
-
-            file.put("fileName", fileName);
-            file.put("size", "" + (int) (Math.random() * 100000));//随机文件大小
-            file.put("filePath", "/downloadcenter/" + fileName);
-            int rl = as.add(file, parameters);
-            String result = (rl > 0 ? "添加成功" : "添加失败");
-            request.setAttribute("result", result);
-            request.setAttribute("parameType", type);
-            rd = request.getRequestDispatcher("/admin/result.jsp");
-            rd.forward(request, response);
         } else if ("deleteHa".equals(flag)) {
             String HaNo = request.getParameter("HaNo");
             Map parameters = new HashMap();
