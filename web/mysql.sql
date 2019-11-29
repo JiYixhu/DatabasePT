@@ -104,3 +104,5 @@ INSERT INTO updateprice VALUES('0000000002','Ryzen 7 3700X','0003','科技美学
 INSERT INTO updateprice VALUES('0000000002','Ryzen 7 3700X','0004','久顺电脑城',2099,'2019-10-08');
 INSERT INTO updateprice VALUES('0000000003','奔腾 G5400','0004','久顺电脑城',549,'2019-10-08');
 INSERT INTO updateprice VALUES('0000000003','奔腾 G5400','0003','科技美学',569,'2019-10-08');
+
+    insert into `hardware` (`HaNo`, `HaName`, `HaCate`, `HaBrand`, `HaPrice`, `HaPara`, `HaPic`, `HaDate`) values('0000000007','iGame1050Ti 烈焰战神U-4GD5','显卡','七彩虹','1249','显卡芯片：GeForce GTX 1050Ti，核心频率：1290/1493MHz，显存频率：7000MHz，显存容量：4GB，显存位宽：128bit','/DatabasePT/img/显卡01.jpg','2019-10-07 00:00:00');

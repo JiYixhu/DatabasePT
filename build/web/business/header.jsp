@@ -1,6 +1,7 @@
 <%@page contentType="text/html" pageEncoding="GB2312"%>
 <div class="logo">
     <strong>IT硬件报价</strong>
+    <strong style=" font-size: 25px;color: #48D1CC;">商家系统</strong>
     <b>|</b>
     <strong style=" font-size: 20px">专业 全面</strong>
 </div>

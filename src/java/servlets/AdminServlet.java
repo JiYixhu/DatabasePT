@@ -61,11 +61,10 @@ public class AdminServlet extends HttpServlet {
             request.setAttribute("parameCate", cate);
             request.setAttribute("parameBrand", brand);
             rd = request.getRequestDispatcher("/admin/first.jsp");
-            rd.forward(request, response);          
-        } 
-        else if ("Bulist".equals(flag)) {
-            String Number =request.getParameter("Number");
-            String Name =request.getParameter("Name");
+            rd.forward(request, response);
+        } else if ("Bulist".equals(flag)) {
+            String Number = request.getParameter("Number");
+            String Name = request.getParameter("Name");
             String page = request.getParameter("page");
             int curPage = 0;
             if (page == null || page.length() < 1) {
@@ -73,12 +72,11 @@ public class AdminServlet extends HttpServlet {
             } else {
                 curPage = Integer.parseInt(page);
             }
-            PageBean pageBean = as.Bulist(Number,Name,curPage);
+            PageBean pageBean = as.Bulist(Number, Name, curPage);
             request.setAttribute("pageBean", pageBean);
             rd = request.getRequestDispatcher("/admin/second.jsp");
             rd.forward(request, response);
-        }
-        else if ("Calist".equals(flag)) {
+        } else if ("Calist".equals(flag)) {
             String page = request.getParameter("page");//上一个页面哪里在传page的值
             int curPage = 0;
             if (page == null || page.length() < 1) {
@@ -90,8 +88,7 @@ public class AdminServlet extends HttpServlet {
             request.setAttribute("pageBean", pageBean);
             rd = request.getRequestDispatcher("/admin/third.jsp");
             rd.forward(request, response);
-        }
-        else if ("Brlist".equals(flag)) {
+        } else if ("Brlist".equals(flag)) {
             String page = request.getParameter("page");
             int curPage = 0;
             if (page == null || page.length() < 1) {
@@ -103,15 +100,13 @@ public class AdminServlet extends HttpServlet {
             request.setAttribute("pageBean", pageBean);
             rd = request.getRequestDispatcher("/admin/forth.jsp");
             rd.forward(request, response);
-        }
-        else if ("showHadetail".equals(flag)) {
+        } else if ("showHadetail".equals(flag)) {
             String id = request.getParameter("id");
             Map hardware = as.getById(id);
-            request.setAttribute("hardware", hardware);//这句什么意思？
+            request.setAttribute("hardware", hardware);
             rd = request.getRequestDispatcher("/admin/showHadetail.jsp");
             rd.forward(request, response);
-        }
-        else if ("PriceList".equals(flag)) {
+        } else if ("PriceList".equals(flag)) {
             String id = request.getParameter("id");
             String page = request.getParameter("page");
             int curPage = 0;
@@ -120,12 +115,11 @@ public class AdminServlet extends HttpServlet {
             } else {
                 curPage = Integer.parseInt(page);
             }
-            PageBean pageBean =as.PriceList(curPage,id);
+            PageBean pageBean = as.PriceList(curPage, id);
             request.setAttribute("pageBean", pageBean);
             rd = request.getRequestDispatcher("/admin/PriceList.jsp");
             rd.forward(request, response);
-        }
-        else if ("add".equals(flag)) {
+        } else if ("add".equals(flag)) {
             String name = request.getParameter("name");
             String type = request.getParameter("type");
             String description = request.getParameter("description");
@@ -137,28 +131,12 @@ public class AdminServlet extends HttpServlet {
             //String str = fileName.substring(fileName.lastIndexOf("."), fileName.length());
             Map file = new HashMap();
             //String s = "" + Math.random();
-            
+
             file.put("fileName", fileName);
-            file.put("size", ""+(int) (Math.random() * 100000));//随机文件大小
-            file.put("filePath", "/downloadcenter/" + fileName);   
+            file.put("size", "" + (int) (Math.random() * 100000));//随机文件大小
+            file.put("filePath", "/downloadcenter/" + fileName);
             int rl = as.add(file, parameters);
             String result = (rl > 0 ? "添加成功" : "添加失败");
-            request.setAttribute("result", result);
-            request.setAttribute("parameType", type);
-            rd = request.getRequestDispatcher("/admin/result.jsp");
-            rd.forward(request, response);
-        } else if ("update".equals(flag)) {
-            String name = request.getParameter("name");
-            String type = request.getParameter("type");
-            String description = request.getParameter("description");
-            String id = request.getParameter("id");
-            Map parameters = new HashMap();
-            parameters.put("name", name);
-            parameters.put("type", type);
-            parameters.put("description", description);
-            parameters.put("id", id);
-            int rl = as.updateInfo(parameters);//rl返回的是受影响的记录的行数
-            String result = (rl > 0 ? "修改成功" : "修改失败");
             request.setAttribute("result", result);
             request.setAttribute("parameType", type);
             rd = request.getRequestDispatcher("/admin/result.jsp");
@@ -172,8 +150,7 @@ public class AdminServlet extends HttpServlet {
             request.setAttribute("result", result);
             rd = request.getRequestDispatcher("/admin/first.jsp");
             rd.forward(request, response);
-        }
-        else if ("deleteBu".equals(flag)) {
+        } else if ("deleteBu".equals(flag)) {
             String BuNo = request.getParameter("BuNo");
             Map parameters = new HashMap();
             parameters.put("BuNo", BuNo);
@@ -182,8 +159,7 @@ public class AdminServlet extends HttpServlet {
             request.setAttribute("result", result);
             rd = request.getRequestDispatcher("/admin/second.jsp");
             rd.forward(request, response);
-        }
-        else if ("deleteCa".equals(flag)) {
+        } else if ("deleteCa".equals(flag)) {
             String HaCateNo = request.getParameter("HaCateNo");
             Map parameters = new HashMap();
             parameters.put("HaCateNo", HaCateNo);
@@ -192,17 +168,29 @@ public class AdminServlet extends HttpServlet {
             request.setAttribute("result", result);
             rd = request.getRequestDispatcher("/admin/third.jsp");
             rd.forward(request, response);
-        }
-        else if ("deleteBr".equals(flag)) {
-            String HaCateNo = request.getParameter("HaCateNo");
+        } else if ("deleteBr".equals(flag)) {
+            String HaBrandNo = request.getParameter("HaBrandNo");
             Map parameters = new HashMap();
-            parameters.put("HaCateNo", HaCateNo);
+            parameters.put("HaBrandNo", HaBrandNo);
             int rl = as.deleteBr(parameters);
             String result = (rl > 0 ? "删除成功" : "删除失败");
             request.setAttribute("result", result);
             rd = request.getRequestDispatcher("/admin/forth.jsp");
             rd.forward(request, response);
-        }else if ("updateBu".equals(flag)) {
+        } else if ("updateHa".equals(flag)) {
+            String HaName = request.getParameter("HaName");
+            String HaPara = request.getParameter("HaPara");
+            String HaNo = request.getParameter("HaNo");
+            Map parameters = new HashMap();
+            parameters.put("HaName", HaName);
+            parameters.put("HaPara", HaPara);
+            parameters.put("HaNo", HaNo);
+            int rl = as.updateHa(parameters);//rl返回的是受影响的记录的行数
+            String result = (rl > 0 ? "修改成功" : "修改失败");
+            request.setAttribute("result", result);
+            rd = request.getRequestDispatcher("/admin/first.jsp");
+            rd.forward(request, response);
+        } else if ("updateBu".equals(flag)) {
             String BuName = request.getParameter("BuName");
             String BuAddress = request.getParameter("BuAddress");
             String BuTel = request.getParameter("BuTel");
@@ -228,7 +216,7 @@ public class AdminServlet extends HttpServlet {
             request.setAttribute("result", result);
             rd = request.getRequestDispatcher("/admin/third.jsp");
             rd.forward(request, response);
-        }else if ("updateBr".equals(flag)) {
+        } else if ("updateBr".equals(flag)) {
             String HaBrandNo = request.getParameter("HaBrandNo");
             String HaBrand = request.getParameter("HaBrand");
             Map parameters = new HashMap();
@@ -239,7 +227,7 @@ public class AdminServlet extends HttpServlet {
             request.setAttribute("result", result);
             rd = request.getRequestDispatcher("/admin/forth.jsp");
             rd.forward(request, response);
-        }else if ("addBu".equals(flag)) {
+        } else if ("addBu".equals(flag)) {
             String result;
             String BuNo = request.getParameter("BuNo");
             String BuID = request.getParameter("BuID");
@@ -248,7 +236,7 @@ public class AdminServlet extends HttpServlet {
             String BuName = request.getParameter("BuName");
             String BuAdd = request.getParameter("BuAdd");
             String BuTel = request.getParameter("BuTel");
-            if ("".equals(BuNo) || "".equals(BuID) || "".equals(BuPwd1) || "".equals(BuPwd2) || "".equals(BuName)||"".equals(BuAdd)||"".equals(BuTel)) {
+            if ("".equals(BuNo) || "".equals(BuID) || "".equals(BuPwd1) || "".equals(BuPwd2) || "".equals(BuName) || "".equals(BuAdd) || "".equals(BuTel)) {
                 result = "isnull";
             } else if (BuPwd2.equals(BuPwd1)) {
                 request.getSession().setAttribute("result", "ok");
@@ -267,42 +255,43 @@ public class AdminServlet extends HttpServlet {
             request.setAttribute("result", result);
             rd = request.getRequestDispatcher("/admin/addBu.jsp");
             rd.forward(request, response);
-        }else if ("addCa".equals(flag)) {
+        } else if ("addCa".equals(flag)) {
             String result;
             String HaCateNo = request.getParameter("HaCateNo");
             String HaCate = request.getParameter("HaCate");
             if ("".equals(HaCateNo) || "".equals(HaCate)) {
                 result = "isnull";
-            } else  {
+            } else {
                 request.getSession().setAttribute("result", "ok");
                 Map parameters = new HashMap();
                 parameters.put("HaCateNo", HaCateNo);
                 parameters.put("HaCate", HaCate);
                 int rl = as.addCa(parameters);
                 result = (rl > 0 ? "添加成功" : "添加失败");
-            } 
+            }
             request.setAttribute("result", result);
             rd = request.getRequestDispatcher("/admin/addCa.jsp");
             rd.forward(request, response);
-        }else if ("addBr".equals(flag)) {
+        } else if ("addBr".equals(flag)) {
             String result;
             String HaBrandNo = request.getParameter("HaBrandNo");
             String HaBrand = request.getParameter("HaBrand");
             if ("".equals(HaBrandNo) || "".equals(HaBrand)) {
                 result = "isnull";
-            } else  {
+            } else {
                 request.getSession().setAttribute("result", "ok");
                 Map parameters = new HashMap();
                 parameters.put("HaBrandNo", HaBrandNo);
                 parameters.put("HaBrand", HaBrand);
                 int rl = as.addBr(parameters);
                 result = (rl > 0 ? "添加成功" : "添加失败");
-            } 
+            }
             request.setAttribute("result", result);
             rd = request.getRequestDispatcher("/admin/addBr.jsp");
             rd.forward(request, response);
         }
     }
+
     @Override
     public String getServletInfo() {
         return "Short description";

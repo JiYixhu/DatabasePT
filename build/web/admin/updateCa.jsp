@@ -6,7 +6,7 @@
    response.setCharacterEncoding("GB2312");
 %>
 <style>
-    h1{
+    h2{
         margin-top: 80px;
         color: transparent;
         background-color :#008B8B;
@@ -28,7 +28,7 @@
 </style>
 <body>
 <center>
-    <h1>类别信息修改</h1><!--类别代码不可修改-->
+    <h2>类别信息修改</h2><!--类别代码不可修改-->
     <form action="${pageContext.request.contextPath}/AdminServlet?flag=updateCa" method="post">
         <table width="60%">
             <tr>

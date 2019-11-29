@@ -137,15 +137,6 @@ public class AdminService {
         return result;
     }
 
-    public int updateInfo(Map parameters) {
-        String id = (String) parameters.get("id");
-        String type = (String) parameters.get("type");
-        String description = (String) parameters.get("description");
-        String name = (String) parameters.get("name");
-        String sql = "update files set instruction = ?, lastModified = now(), ftype = ?, detail = ? where id = ?";
-        return db.update(sql, new String[]{name, type, description, id});
-    }
-
     public int addBrand(Map parameters) {
         String HaBrandNo = (String) parameters.get("HaBrandNo");
         String HaBrand = (String) parameters.get("HaBrand");
@@ -182,6 +173,14 @@ public class AdminService {
         String HaBrandNo = (String) parameters.get("HaBrandNo");
         String sql = "delete from brand where HaBrandNo = ?";
         return db.update(sql, new String[]{HaBrandNo});
+    }
+
+    public int updateHa(Map parameters) {
+        String HaName = (String) parameters.get("HaName");
+        String HaPara = (String) parameters.get("HaPara");
+        String HaNo = (String) parameters.get("HaNo");
+        String sql = "update hardware set HaName = ?,HaPara = ? where HaNo = ?";
+        return db.update(sql, new String[]{HaName,HaPara, HaNo});
     }
 
     public int updateBu(Map parameters) {
@@ -228,7 +227,7 @@ public class AdminService {
         result = db.update(sql, new String[]{HaCateNo, HaCate});
         return result;
     }
-    
+
     public int addBr(Map parameters) {
         int result = 0;
         String HaBrandNo = (String) parameters.get("HaBrandNo");
@@ -237,4 +236,18 @@ public class AdminService {
         result = db.update(sql, new String[]{HaBrandNo, HaBrand});
         return result;
     }
+
+    public int addHa(Map parameters) {
+        int result = 0;
+        String HaNo = (String) parameters.get("HaNo");
+        String HaName = (String) parameters.get("HaName");
+        String HaCate = (String) parameters.get("HaCate");
+        String HaBrand = (String) parameters.get("HaBrand");
+        String HaPara = (String) parameters.get("HaPara");
+        String HaPic = (String) parameters.get("HaPic");
+        String sql = "insert into hardware (HaNo,HaName,HaCate,HaBrand,HaPara,HaPic) values(?,?,?,?,?,?)";
+        result = db.update(sql, new String[]{HaNo, HaName, HaCate, HaBrand, HaPara, HaPic});
+        return result;
+    }
+
 }

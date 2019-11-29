@@ -6,7 +6,14 @@
 <center>
     <br><h1>品牌列表</h1><br>
     <c:set var="url" value="${pageContext.request.contextPath}/AdminServlet?flag=Brlist" />
-    <a style="display: block;width: 120px;background-color: #FFA500;height: 30px;line-height: 30px;color: #fff;margin-bottom: 5px;border-radius: 4px;" href="${pageContext.request.contextPath}/admin/addBr.jsp">品牌添加</a>
+    <a style="display: block;
+    width: 120px;
+    background-color: #FFA500;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    margin-bottom: 5px;
+    border-radius: 4px;"  href="${pageContext.request.contextPath}/admin/addBr.jsp">品牌添加</a>
     <table class="table" width="60%">
         <tr style="background-color: #eee;">
             <th width="40%">品牌代码</th>
@@ -37,15 +44,15 @@
     <script>window.alert("删除成功！");</script>
     <%session.setAttribute("result", null);%>
 </c:if>
-     <c:if test="${result=='删除失败'}">
+<c:if test="${result=='删除失败'}">
     <script>window.alert("删除失败！");</script>
     <%session.setAttribute("result", null);%>
 </c:if>
-        <c:if test="${result=='修改成功'}">
+<c:if test="${result=='修改成功'}">
     <script>window.alert("修改成功！");</script>
     <%session.setAttribute("result", null);%>
 </c:if>
-     <c:if test="${result=='修改失败'}">
+<c:if test="${result=='修改失败'}">
     <script>window.alert("修改失败！");</script>
     <%session.setAttribute("result", null);%>
 </c:if>

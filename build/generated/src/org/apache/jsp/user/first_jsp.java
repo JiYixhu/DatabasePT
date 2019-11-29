@@ -1,4 +1,4 @@
-package org.apache.jsp.admin;
+package org.apache.jsp.user;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -13,14 +13,13 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   static {
     _jspx_dependants = new java.util.ArrayList<String>(2);
-    _jspx_dependants.add("/admin/header.jsp");
+    _jspx_dependants.add("/user/header.jsp");
     _jspx_dependants.add("/footer.jsp");
   }
 
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_forEach_var_items;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_set_var_value_nobody;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_choose;
-  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_if_test;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_otherwise;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_when_test;
 
@@ -34,7 +33,6 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_tagPool_c_forEach_var_items = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_c_set_var_value_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_c_choose = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
-    _jspx_tagPool_c_if_test = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_c_otherwise = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_c_when_test = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
   }
@@ -43,7 +41,6 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_tagPool_c_forEach_var_items.release();
     _jspx_tagPool_c_set_var_value_nobody.release();
     _jspx_tagPool_c_choose.release();
-    _jspx_tagPool_c_if_test.release();
     _jspx_tagPool_c_otherwise.release();
     _jspx_tagPool_c_when_test.release();
   }
@@ -77,9 +74,8 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("<div class=\"logo\">\n");
       out.write("    <strong>IT硬件报价</strong>\n");
-      out.write("    <strong style=\" font-size: 25px;color: #48D1CC;\">管理系统</strong>\n");
       out.write("    <b>|</b>\n");
-      out.write("    <strong style=\" font-size: 20px\">专业 全面</strong>   \n");
+      out.write("    <strong style=\" font-size: 20px\">专业 全面</strong>\n");
       out.write("</div>\n");
       out.write("<div class=\"box\" align=\"center\">\n");
       out.write("    <ul>\n");
@@ -88,16 +84,13 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("/login.jsp\">登录页面</a></li>\n");
       out.write("        <li><a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/AdminServlet?flag=Halist\">硬件列表</a></li>\n");
+      out.write("/UserServlet?flag=Halist\">硬件列表</a></li>\n");
       out.write("        <li><a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/AdminServlet?flag=Bulist\">商家列表</a></li>\n");
+      out.write("/UserServlet?flag=Pricelist\">报价列表</a></li>\n");
       out.write("        <li><a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/AdminServlet?flag=Calist\">类别列表</a></li>\n");
-      out.write("        <li><a href=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/AdminServlet?flag=Brlist\">品牌列表</a></li>\n");
+      out.write("/UserServlet?flag=Bulist\">商家列表</a></li>\n");
       out.write("    </ul>\n");
       out.write("</div>\n");
       out.write("   \n");
@@ -117,7 +110,7 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        width:100%;\n");
       out.write("        background:#66CCFF;\n");
       out.write("        position: fixed; /*固定在顶部*/\n");
-      out.write("        top: 67px;/*离顶部的距离为*/\n");
+      out.write("        top: 67px;/*离顶部的距离为0*/\n");
       out.write("    }\n");
       out.write("    .box ul{\n");
       out.write("        /* 清除ul标签的默认样式 */\n");
@@ -157,22 +150,6 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_meth_c_set_0(_jspx_page_context))
         return;
       out.write("\n");
-      out.write("    \n");
-      out.write("    <form action=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/admin/addHa.jsp\" >\n");
-      out.write("                        <input type=\"hidden\" name=\"HaNo\" value=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${hardware.HaNo}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\">\n");
-      out.write("                        <input type=\"hidden\" name=\"HaName\" value=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${hardware.HaName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\">\n");
-      out.write("                        <input class=\"tianjia\" type=\"submit\" value=\"硬件添加\">\n");
-      out.write("                    </form>\n");
-      out.write("    <!--<a  class=\"tianjia\" href=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/admin/addHa.jsp\">硬件添加</a>-->\n");
-      out.write("    \n");
       out.write("    <form action=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${url}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\" method=\"post\" style=\"margin-bottom: 10px;\">\n");
@@ -195,14 +172,13 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        请输入硬件名称关键字：<input  style=\"width: 200px;height: 30px;\" type=\"text\" name=\"selectname\">\n");
       out.write("        <input type=\"submit\" value=\"查看\" style=\"width: 100px;color: #FFFFFF;height: 30px;background-color:#FFA500;border: none;border-radius: 4px;\">\n");
       out.write("    </form>\n");
-      out.write("    <table class=\"table\" width=\"80%\">\n");
+      out.write("    <table class=\"table\" width=\"75%\">\n");
       out.write("        <tr style=\"background-color: #eee;\">\n");
-      out.write("            <th width=\"15%\">硬件编号</th>\n");
-      out.write("            <th width=\"26%\">硬件名称</th>\n");
-      out.write("            <th width=\"12%\">硬件类别</th>\n");
-      out.write("            <th width=\"12%\">硬件品牌</th>\n");
+      out.write("            <th width=\"10%\">硬件编号</th>\n");
+      out.write("            <th width=\"25%\">硬件名称</th>\n");
+      out.write("            <th width=\"10%\">硬件类别</th>\n");
+      out.write("            <th width=\"10%\">硬件品牌</th>\n");
       out.write("            <th width=\"20%\">更新日期</th>\n");
-      out.write("            <th colspan=\"2\" width=\"15%\">编辑</th>\n");
       out.write("        </tr>\n");
       out.write("        ");
       if (_jspx_meth_c_forEach_2(_jspx_page_context))
@@ -264,104 +240,6 @@ public final class first_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</div>");
       out.write("\n");
       out.write("</center>\n");
-      //  c:if
-      org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
-      _jspx_th_c_if_0.setPageContext(_jspx_page_context);
-      _jspx_th_c_if_0.setParent(null);
-      _jspx_th_c_if_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${result=='删除成功'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
-      int _jspx_eval_c_if_0 = _jspx_th_c_if_0.doStartTag();
-      if (_jspx_eval_c_if_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-        do {
-          out.write("\n");
-          out.write("    <script>window.alert(\"删除成功！\");</script>\n");
-          out.write("    ");
-session.setAttribute("result", null);
-          out.write('\n');
-          int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
-          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-            break;
-        } while (true);
-      }
-      if (_jspx_th_c_if_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
-        return;
-      }
-      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
-      out.write("\n");
-      out.write("     ");
-      //  c:if
-      org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_1 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
-      _jspx_th_c_if_1.setPageContext(_jspx_page_context);
-      _jspx_th_c_if_1.setParent(null);
-      _jspx_th_c_if_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${result=='删除失败'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
-      int _jspx_eval_c_if_1 = _jspx_th_c_if_1.doStartTag();
-      if (_jspx_eval_c_if_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-        do {
-          out.write("\n");
-          out.write("    <script>window.alert(\"删除失败！\");</script>\n");
-          out.write("    ");
-session.setAttribute("result", null);
-          out.write('\n');
-          int evalDoAfterBody = _jspx_th_c_if_1.doAfterBody();
-          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-            break;
-        } while (true);
-      }
-      if (_jspx_th_c_if_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_1);
-        return;
-      }
-      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_1);
-      out.write("\n");
-      out.write("    ");
-      //  c:if
-      org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_2 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
-      _jspx_th_c_if_2.setPageContext(_jspx_page_context);
-      _jspx_th_c_if_2.setParent(null);
-      _jspx_th_c_if_2.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${result=='修改成功'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
-      int _jspx_eval_c_if_2 = _jspx_th_c_if_2.doStartTag();
-      if (_jspx_eval_c_if_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-        do {
-          out.write("\n");
-          out.write("    <script>window.alert(\"修改成功！\");</script>\n");
-          out.write("    ");
-session.setAttribute("result", null);
-          out.write('\n');
-          int evalDoAfterBody = _jspx_th_c_if_2.doAfterBody();
-          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-            break;
-        } while (true);
-      }
-      if (_jspx_th_c_if_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_2);
-        return;
-      }
-      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_2);
-      out.write('\n');
-      //  c:if
-      org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_3 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
-      _jspx_th_c_if_3.setPageContext(_jspx_page_context);
-      _jspx_th_c_if_3.setParent(null);
-      _jspx_th_c_if_3.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${result=='修改失败'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
-      int _jspx_eval_c_if_3 = _jspx_th_c_if_3.doStartTag();
-      if (_jspx_eval_c_if_3 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-        do {
-          out.write("\n");
-          out.write("    <script>window.alert(\"修改失败！\");</script>\n");
-          out.write("    ");
-session.setAttribute("result", null);
-          out.write('\n');
-          int evalDoAfterBody = _jspx_th_c_if_3.doAfterBody();
-          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-            break;
-        } while (true);
-      }
-      if (_jspx_th_c_if_3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-        _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_3);
-        return;
-      }
-      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_3);
-      out.write("\n");
       out.write("</body>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
@@ -385,7 +263,7 @@ session.setAttribute("result", null);
     _jspx_th_c_set_0.setPageContext(_jspx_page_context);
     _jspx_th_c_set_0.setParent(null);
     _jspx_th_c_set_0.setVar("url");
-    _jspx_th_c_set_0.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}/AdminServlet?flag=Halist", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_set_0.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}/UserServlet?flag=Halist", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     int _jspx_eval_c_set_0 = _jspx_th_c_set_0.doStartTag();
     if (_jspx_th_c_set_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_c_set_var_value_nobody.reuse(_jspx_th_c_set_0);
@@ -498,7 +376,7 @@ session.setAttribute("result", null);
           out.write("            <tr>\n");
           out.write("                <td><a href=\"");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("/AdminServlet?flag=showHadetail&id=");
+          out.write("/UserServlet?flag=showHadetail&id=");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${hardware.HaNo}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write('"');
           out.write('>');
@@ -516,28 +394,6 @@ session.setAttribute("result", null);
           out.write("                <td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${hardware.HaDate}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\n");
-          out.write("                <td><form action=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("/admin/updateHa.jsp\" >\n");
-          out.write("                        <input type=\"hidden\" name=\"HaNo\" value=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${hardware.HaNo}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("\">\n");
-          out.write("                        <input type=\"hidden\" name=\"HaName\" value=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${hardware.HaName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("\">\n");
-          out.write("                        <input class=\"updateBtn\" type=\"submit\" value=\"修改\">\n");
-          out.write("                    </form></td>\n");
-          out.write("                <td><form action=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("/admin/deleteHa.jsp\" >\n");
-          out.write("                        <input type=\"hidden\" name=\"HaNo\" value=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${hardware.HaNo}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("\">\n");
-          out.write("                        <input type=\"hidden\" name=\"HaName\" value=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${hardware.HaName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("\">\n");
-          out.write("                        <input class=\"deleteBtn\" type=\"submit\" value=\"删除\">\n");
-          out.write("                    </form></td>\n");
           out.write("            </tr>\n");
           out.write("        ");
           int evalDoAfterBody = _jspx_th_c_forEach_2.doAfterBody();

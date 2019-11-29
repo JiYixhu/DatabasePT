@@ -77,8 +77,9 @@ public final class second_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("<div class=\"logo\">\n");
       out.write("    <strong>IT硬件报价</strong>\n");
+      out.write("    <strong style=\" font-size: 25px;color: #48D1CC;\">管理系统</strong>\n");
       out.write("    <b>|</b>\n");
-      out.write("    <strong style=\" font-size: 20px\">专业 全面</strong>\n");
+      out.write("    <strong style=\" font-size: 20px\">专业 全面</strong>   \n");
       out.write("</div>\n");
       out.write("<div class=\"box\" align=\"center\">\n");
       out.write("    <ul>\n");
@@ -158,7 +159,7 @@ public final class second_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("    <a style=\"display: block;width: 120px;background-color: #FFA500;height: 30px;line-height: 30px;color: #fff;margin-bottom: 5px;border-radius: 4px;\" href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/admin/addBu.jsp\">商家添加</a>\n");
+      out.write("/AdminServlet?flag=addBu\">商家添加</a>\n");
       out.write("    <form action=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${url}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\" method=\"post\" style=\"margin-bottom: 10px;\"> \n");

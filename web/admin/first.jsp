@@ -6,7 +6,21 @@
 <center>
     <br><h1>硬件列表</h1><br>
     <c:set var="url" value="${pageContext.request.contextPath}/AdminServlet?flag=Halist" />
-    <a style="display: block;width: 120px;background-color: #FFA500;height: 30px;line-height: 30px;color: #fff;margin-bottom: 5px;border-radius: 4px;" href="${pageContext.request.contextPath}/admin/add.jsp">硬件添加</a>
+
+    <form action="${pageContext.request.contextPath}/admin/addHa.jsp" >
+        <input type="hidden" name="category" value="${category.data}">
+        <input type="hidden" name="bbrand" value="${bbrand.data}">
+        <input style="display: block;
+               width: 120px;
+               background-color: #FFA500;
+               height: 30px;
+               line-height: 30px;
+               color: #fff;
+               margin-bottom: 5px;
+               border-radius: 4px;" type="submit" value="硬件添加">
+    </form>
+<!--<a  class="tianjia" href="${pageContext.request.contextPath}/admin/addHa.jsp">硬件添加</a>-->
+
     <form action="${url}" method="post" style="margin-bottom: 10px;">
         请选择类别：<select name="selectcate" style="width: 100px;height: 30px;">
             <option value="">全部类别</option>
@@ -60,8 +74,16 @@
     <script>window.alert("删除成功！");</script>
     <%session.setAttribute("result", null);%>
 </c:if>
-     <c:if test="${result=='删除失败'}">
+<c:if test="${result=='删除失败'}">
     <script>window.alert("删除失败！");</script>
+    <%session.setAttribute("result", null);%>
+</c:if>
+<c:if test="${result=='修改成功'}">
+    <script>window.alert("修改成功！");</script>
+    <%session.setAttribute("result", null);%>
+</c:if>
+<c:if test="${result=='修改失败'}">
+    <script>window.alert("修改失败！");</script>
     <%session.setAttribute("result", null);%>
 </c:if>
 </body>

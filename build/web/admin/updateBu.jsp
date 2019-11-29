@@ -6,7 +6,7 @@
    response.setCharacterEncoding("GB2312");
 %>
 <style>
-    h1{
+    h2{
         margin-top: 80px;
         color: transparent;
         background-color :#008B8B;
@@ -28,7 +28,7 @@
 </style>
 <body>
 <center>
-    <h1>商家信息修改</h1><!--添加商家信息的时候务必包括所有信息，账号密码等！！！ -->
+    <h2>商家信息修改</h2><!--添加商家信息的时候务必包括所有信息，账号密码等！！！ -->
     <form action="${pageContext.request.contextPath}/AdminServlet?flag=updateBu" method="post">
         <table width="60%">
             <tr>
